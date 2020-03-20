@@ -1,0 +1,3 @@
+[submodule "doc-source/themes/book"]
+	path = doc-source/themes/book
+	url = https://github.com/alex-shpak/hugo-book
