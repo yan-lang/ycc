@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
+Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque."><meta property="og:title" content="实验2 语法分析" />
+<meta property="og:description" content="At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
+Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yan-lang.github.io/ycc/lab/note/lab2/" />
+<meta property="article:modified_time" content="2020-03-20T23:56:05+08:00" />
+<title>实验2 语法分析 | YCC实验2020</title>
+<link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/ycc/book.min.e84141515544ad1a3f6dd11c1582d7c2debbd4129f095be6781fd47e6ce531e3.css" integrity="sha256-6EFBUVVErRo/bdEcFYLXwt671BKfCVvmeB/UfmzlMeM=">
+
+
+<script defer src="/ycc/cn.search.min.072d16020586a77b209205d0f3429e63df6eac35d1099740d9f6e3b958d44210.js" integrity="sha256-By0WAgWGp3sgkgXQ80KeY99urDXRCZdA2fbjuVjUQhA="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/ycc"><span>YCC实验2020</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>实验</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/ycc/lab/summary/" class="collapsed ">实验综述</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/ycc/lab/note/" class="collapsed ">实验说明</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/ycc/lab/note/lab1/" class="">实验1 词法分析</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/ycc/lab/note/lab2/" class="active">实验2 语法分析</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/ycc/lab/lang-std/" class="collapsed ">语言规范</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>框架指导</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/ycc/framework-tutorial/java/" class="collapsed ">Java</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>其他</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/ycc/other/faq/" class="">常见问题</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/yan-lang/ycc" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://yan-lang.github.io/" target="_blank" rel="noopener">
+        Yan.io
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/ycc/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>实验2 语法分析</strong>
+
+  <label for="toc-control">
+    <img src="/ycc/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#at-me-ipso-nepotibus-nunc-celebratior-genus">At me ipso nepotibus nunc celebratior genus</a>
+      <ul>
+        <li><a href="#tanto-oblite">Tanto oblite</a></li>
+        <li><a href="#summe-promissa-supple-vadit-lenius">Summe promissa supple vadit lenius</a></li>
+        <li><a href="#quidem-resupinus-inducto-solebat-una-facinus-quae">Quidem resupinus inducto solebat una facinus quae</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="at-me-ipso-nepotibus-nunc-celebratior-genus">At me ipso nepotibus nunc celebratior genus</h1>
+<h2 id="tanto-oblite">Tanto oblite</h2>
+<p>Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque
+illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro
+clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens
+vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat
+admonitu concidit, ad resimas vultus et rugas vultu <strong>dignamque</strong> Siphnon.</p>
+<p>Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt
+dixit: ritu pharetramque. Exul Laurenti orantem modo, per densum missisque labor
+manibus non colla unum, obiectat. Tu pervia collo, fessus quae Cretenque Myconon
+crate! Tegumenque quae invisi sudore per vocari quaque plus ventis fluidos. Nodo
+perque, fugisse pectora sorores.</p>
+<h2 id="summe-promissa-supple-vadit-lenius">Summe promissa supple vadit lenius</h2>
+<p>Quibus largis latebris aethera versato est, ait sentiat faciemque. Aequata alis
+nec Caeneus exululat inclite corpus est, ire <strong>tibi</strong> ostendens et tibi. Rigent
+et vires dique possent lumina; <strong>eadem</strong> dixit poma funeribus paret et felix
+reddebant ventis utile lignum.</p>
+<ol>
+<li>Remansit notam Stygia feroxque</li>
+<li>Et dabit materna</li>
+<li>Vipereas Phrygiaeque umbram sollicito cruore conlucere suus</li>
+<li>Quarum Elis corniger</li>
+<li>Nec ieiunia dixit</li>
+</ol>
+<p>Vertitur mos ortu ramosam contudit dumque; placabat ac lumen. Coniunx Amoris
+spatium poenamque cavernis Thebae Pleiadasque ponunt, rapiare cum quae parum
+nimium rima.</p>
+<h2 id="quidem-resupinus-inducto-solebat-una-facinus-quae">Quidem resupinus inducto solebat una facinus quae</h2>
+<p>Credulitas iniqua praepetibus paruit prospexit, voce poena, sub rupit sinuatur,
+quin suum ventorumque arcadiae priori. Soporiferam erat formamque, fecit,
+invergens, nymphae mutat fessas ait finge.</p>
+<ol>
+<li>Baculum mandataque ne addere capiti violentior</li>
+<li>Altera duas quam hoc ille tenues inquit</li>
+<li>Sicula sidereus latrantis domoque ratae polluit comites</li>
+<li>Possit oro clausura namque se nunc iuvenisque</li>
+<li>Faciem posuit</li>
+<li>Quodque cum ponunt novercae nata vestrae aratra</li>
+</ol>
+<p>Ite extrema Phrygiis, patre dentibus, tonso perculit, enim blanda, manibus fide
+quos caput armis, posse! Nocendo fas Alcyonae lacertis structa ferarum manus
+fulmen dubius, saxa caelum effuge extremis fixum tumor adfecit <strong>bella</strong>,
+potentes? Dum nec insidiosa tempora tegit
+
+  <a href="http://mihiferre.net/iuvenes-peto.html">spirarunt</a>
+. Per lupi pars foliis,
+porreximus humum negant sunt subposuere Sidone steterant auro. Memoraverit sine:
+ferrum idem Orion caelum heres gerebat fixis?</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/4ff6ca0173968831855d9140f03b3ac4a1642f76" title='最后修改者 Zeqiang-Lai | Mar 20, 2020' target="_blank" rel="noopener">
+      <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Mar 20, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#at-me-ipso-nepotibus-nunc-celebratior-genus">At me ipso nepotibus nunc celebratior genus</a>
+      <ul>
+        <li><a href="#tanto-oblite">Tanto oblite</a></li>
+        <li><a href="#summe-promissa-supple-vadit-lenius">Summe promissa supple vadit lenius</a></li>
+        <li><a href="#quidem-resupinus-inducto-solebat-una-facinus-quae">Quidem resupinus inducto solebat una facinus quae</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
