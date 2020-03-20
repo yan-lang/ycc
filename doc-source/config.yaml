@@ -65,11 +65,11 @@ params:
 
   # (Optional, default docs) Specify section of content to render as menu
   # You can also set value to '*' to render all sections to menu
-  BookSection: docs
+  BookSection: '*'
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo: https://github.com/yan-lang/ycc/doc-source
+  BookRepo: https://github.com/yan-lang/ycc/
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
