@@ -1,7 +1,6 @@
 ---
-title: Without ToC
+title: 实验2 语法分析
 weight: 2
-bookToc: false
 ---
 
 # At me ipso nepotibus nunc celebratior genus

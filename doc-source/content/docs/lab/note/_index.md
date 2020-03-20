@@ -1,5 +1,7 @@
 ---
-weight: 10
+bookCollapseSection: true
+weight: 2
+title: 实验说明
 ---
 
 # Ubi loqui

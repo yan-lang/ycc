@@ -1,6 +1,6 @@
 # hugo server --disableFastRender --baseURL=http://0.0.0.0:1313
 
-title: YCC
+title: YCC实验2020
 theme: book
 baseURL: https://yan-lang.github.io/ycc/
 
@@ -34,10 +34,10 @@ languages:
     languageName: 简体中文
     contentDir: content
     weight: 1
-  en:
-    languageName: English
-    contentDir: content.en
-    weight: 2
+  # en:
+  #   languageName: English
+  #   contentDir: content.en
+  #   weight: 2
 
 menu:
   # before: []
@@ -45,7 +45,7 @@ menu:
     - name: "Github"
       url: "https://github.com/yan-lang/ycc"
       weight: 10
-    - name: "← Return to Yan.io"
+    - name: "Yan.io"
       url: "https://yan-lang.github.io/"
       weight: 10
 
