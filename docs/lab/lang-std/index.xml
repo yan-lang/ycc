@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>语言规范 on YCC实验2020</title>
+    <title>语言规范 on YCC实验 - 2020</title>
     <link>https://yan-lang.github.io/ycc/lab/lang-std/</link>
-    <description>Recent content in 语言规范 on YCC实验2020</description>
+    <description>Recent content in 语言规范 on YCC实验 - 2020</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://yan-lang.github.io/ycc/lab/lang-std/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/lexical/</guid>
-      <description>词法规范 待编写  </description>
+      <description>词法规范 待编写  YC0 以下是YC0的词法规则，使用正则表达式表示。
+   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT 0|[1-9][0-9]*   FLOAT_LIT (0|[1-9][0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD + KW_INT int LPAREN (   MINUS - KW_FLOAT float RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &amp;gt; KW_ELSE else COLUMN ;   GTE &amp;gt;= KW_WHILE while COMMA ,   LT &amp;lt; KW_CONTINUE continue     LTE &amp;lt;= KW_BREAK break     EQ == KW_RETURN return     NEQ !</description>
     </item>
     
     <item>
@@ -24,7 +25,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/grammar/</guid>
-      <description>语法规范 待编写  </description>
+      <description>语法规范 编写中  我们使用扩展BNF范式描述我们的文法。
+ 以下内容修改自 Decaf语言规范 。
+ * 表示一个符号出现任意多次，包括零次 + 表示一个符号出现至少一次 ? 表示一个符号可选，即至多出现一次 | 分隔多个产生式右部，无顺序 ε 表示空，即不存在任何符号  所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。
+ YC0 终结符的词法规则见 词法规范 | YC0 。
+为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看 语义说明 | YC0 。
+/* 程序结构 */ Program ::= Decl* Decl ::= VarDecl | FuncDecl Block ::= Stmt* Stmt ::= VarDecl | ExprStmt | IfStmt | WhileStmt | ReturnStmt | EmptyStmt EmptyStmt ::= &amp;#39;;&amp;#39; /* 变量 */ VarDecl ::= Type Id &amp;#39;=&amp;#39; Expr &amp;#39;;&amp;#39; Type ::= &amp;#39;int&amp;#39; | &amp;#39;float&amp;#39; | &amp;#39;void&amp;#39; /* 表达式 */ Expr ::= &amp;#39;(&amp;#39; Expr &amp;#39;)&amp;#39; // 括号表达式 | Literal // 常量, 如1.</description>
     </item>
     
     <item>
@@ -33,7 +39,43 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/semantic/</guid>
-      <description>语义说明 待编写  </description>
+      <description>语义说明 编写中  YC0 在 语言规范 一章中，我们已经说了，YC0的文法是C语言文法的一个子集，因此YC0程序也是C语言程序。本节主要阐述YC0语言相对于C语言的一些特殊规定。
+程序结构 一个YC0程序由数个声明（Declaration）构成，声明包括 函数声明 和 变量声明 。
+变量 还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。
+int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 float b = 3.14; // 定义一个名叫a的单精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC0中，我们对变量定义做了一些限制。
+ YC0只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
+char a = &amp;#39;c&amp;#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 float d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC0只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
+YC0支持的表达式按优先级从高到低如下表所示:
+   语义 运算符 结合性 例子     括号 () 无 (a+b)   函数调用 () 左结合 f(10)   相反数，类型转换 - (type) 右结合 -10, (int)3.</description>
+    </item>
+    
+    <item>
+      <title>特性汇总</title>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/cheatsheet/</guid>
+      <description>特性汇总 这里以最简洁的形式汇总了YC语言各个版本支持的特性。</description>
+    </item>
+    
+    <item>
+      <title>新特性提案</title>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</guid>
+      <description>新特性提案 此页面还在撰写中&amp;hellip;  这个页面包含了可能会添加进下一个版本中的语言新特性。
+新特性池  struct 字符串  开发周期 为了保证学生能够较好的完成实验，我们对添加进入YC语言的特性十分的谨慎。这也是为什么我们采用多个版本迭代的方式进行语言特性的选取与开发。
+一般来说，所有学生只被要求实现YC语言前几个版本的特性（现在是YC0），学有余力的同学可以选择继续实现后面的版本。随着版本不断的更新，以后实验可能转向由我们提供编译器的基础实现（YC0），然后由学生实现新特性（YC1～YCn） -&amp;gt; 待定。
+开发周期按学年进行，基本流程如下：
+  特性征集：根据学生，开发组提议内容形成一个新特性池。
+  选取特性：周期初由所有开发组成员从新特性池中选取数个新特性。
+  标准编译器与框架的开发： 在上一个版本的标准编译器中实现新特性，并更新相应自动评测，实验框架代码。
+  特性冻结：在每年的编译原理实验开始前两周对特性进行冻结，已经实现完成的特性准备发布，未实现的特性顺延至下一个周期。
+  集成测试：特性冻结之后，对所有待发布的特性进行一次充分的测试。
+  补充文档：完善必要的文档，包括主站，文档站和实验站。
+  发布新版本：将新版本发布至Github Release和Maven中央仓库。
+    graph TD; 特性征集--选取特性; 选取特性--标准编译器开发; 选取特性--自动评测开发; 选取特性--框架开发; 标准编译器开发--特性冻结; 自动评测开发--特性冻结; 框架开发--特性冻结; 特性冻结--集成测试; 集成测试--补充文档; 补充文档--新版本发布;   </description>
     </item>
     
   </channel>
