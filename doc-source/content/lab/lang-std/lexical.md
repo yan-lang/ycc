@@ -10,38 +10,28 @@ weight: 1
 {{< /hint >}}
 
 ## YC0
-O fallor [in sustinui
-iussorum](http://www.spectataharundine.org/aquas-relinquit.html) equidem.
-Nymphae operi oris alii fronde parens dumque, in auro ait mox ingenti proxima
-iamdudum maius?
 
-    reality(burnDocking(apache_nanometer),
-            pad.property_data_programming.sectorBrowserPpga(dataMask, 37,
-            recycleRup));
-    intellectualVaporwareUser += -5 * 4;
-    traceroute_key_upnp /= lag_optical(android.smb(thyristorTftp));
-    surge_host_golden = mca_compact_device(dual_dpi_opengl, 33,
-            commerce_add_ppc);
-    if (lun_ipv) {
-        verticalExtranet(1, thumbnail_ttl, 3);
-        bar_graphics_jpeg(chipset - sector_xmp_beta);
-    }
+以下是YC0的词法规则，使用正则表达式表示。
+
+| 名称       | 符号                     |
+| ---------- | ------------------------ |
+| IDENTIFIER | `[A-Za-z_][A-Za-z0-9_]*` |
+| INT_LIT    | `0|[1-9][0-9]*`          |
+| FLOAT_LIT  | `(0|[1-9][0-9]*).[0-9]*` |
+
+
+| 名称  | 符号 | 名称        | 符号       | 名称   | 符号 |
+| ----- | ---- | ----------- | ---------- | ------ | ---- |
+| ADD   | `+`  | KW_INT      | `int`      | LPAREN | `(`  |
+| MINUS | `-`  | KW_FLOAT    | `float`    | RPAREN | `)`  |
+| MULTI | `*`  | KW_VOID     | `void`     | LBRACE | `{`  |
+| DIV   | `/`  | KW_IF       | `if`       | RBRACE | `}`  |
+| GT    | `>`  | KW_ELSE     | `else`     | COLUMN | `;`  |
+| GTE   | `>=` | KW_WHILE    | `while`    | COMMA  | `,`  |
+| LT    | `<`  | KW_CONTINUE | `continue` |        |      |
+| LTE   | `<=` | KW_BREAK    | `break`    |        |      |
+| EQ    | `==` | KW_RETURN   | `return`   |        |      |
+| NEQ   | `!=` |             |            |        |      |
 
 ## YC1
 
-O fallor [in sustinui
-iussorum](http://www.spectataharundine.org/aquas-relinquit.html) equidem.
-Nymphae operi oris alii fronde parens dumque, in auro ait mox ingenti proxima
-iamdudum maius?
-
-    reality(burnDocking(apache_nanometer),
-            pad.property_data_programming.sectorBrowserPpga(dataMask, 37,
-            recycleRup));
-    intellectualVaporwareUser += -5 * 4;
-    traceroute_key_upnp /= lag_optical(android.smb(thyristorTftp));
-    surge_host_golden = mca_compact_device(dual_dpi_opengl, 33,
-            commerce_add_ppc);
-    if (lun_ipv) {
-        verticalExtranet(1, thumbnail_ttl, 3);
-        bar_graphics_jpeg(chipset - sector_xmp_beta);
-    }

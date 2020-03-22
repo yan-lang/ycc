@@ -20,7 +20,7 @@ markup:
     startLevel: 1
   highlight:
     guessSyntax: true
-    style: trac
+    style: monokailight
     tabWidth: 4
 
 # Multi-lingual mode config
