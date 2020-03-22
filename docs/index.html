@@ -5,11 +5,11 @@
 	<meta name="generator" content="Hugo 0.65.3" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="YCC编译原理实验 - 2020年春 欢迎选择我们的编译原理实验👏，你可以此这个网站查看实验要求，指导以及常见问题。
-如果你有任何问题无法从本站获取答案，欢迎在每个页面的下方进行评论，或者通过下方的联系方式联系我们的助教。
+<meta name="description" content="YCC编译原理实验 - 2020年春 欢迎选择我们的编译原理实验👏，你可以这个网站查看实验要求，实验指导以及常见问题。
+如果你有任何问题无法从本站获取答案，欢迎在每个页面下方的评论区进行提问，或者通过下方的联系方式联系我们。
  该实验框架仍在开发中，目前已经基本完成词法和语法分析任务的框架开发，欢迎试用！  编程实验 在这个实验中，你们被要求使用Java为 YC 语言编写一个编译器YCC1。
  YC(Yan C)是C语言的一个子集(一个合法的YC程序也是一个合法的C程序)，我们大幅精简了C语言的语法，以确保你可以在这个学期内完成这个实验。
- 你不需要从头设计你的程序结构，我们提供一个基于 Yan Foundation 2的编译器模版供你使用，你需要3基于这个模版构建你的编译器，并通过我们的评测网站提交你的程序进行评分。
+ 你不需要从头设计你的程序结构，我们提供一个基于 Yan Foundation 2的编译器模版供你使用，你需要3基于这个模版构建你的编译器，并通过我们的 评测网站 提交你的程序进行评分。
 详细的实验要求请查看 实验综述 以及 实验说明 ，以下是你需要完成的实验和截止日期:
    实验名称 持续时间 截止日期      Lab1: 词法分析  第三周 待定    Lab2: 语法分析  第四周 ～ 第五周 待定    Lab3: 语义分析  第六周 ～ 第七周 待定    Lab4: 中间代码生成  第八周 ～ 第九周 待定    书面作业   语言认知实验 : 在这个实验中你被要求使用5种语言实现大数乘法算法。    YCC是Yan C Compiler的缩写。 &#x21a9;&#xfe0e;"><meta property="og:title" content="Introduction" />
 <meta property="og:description" content="" />
@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
 
 
-<script defer src="/ycc/cn.search.min.d437cdb110e278da851c78bbf315d34b925c84b1666f1664e821fdebae9eebe3.js" integrity="sha256-1DfNsRDieNqFHHi78xXTS5JchLFmbxZk6CH9666e6&#43;M="></script>
+<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://yan-lang.github.io/ycc/index.xml" title="YCC实验 - 2020" />
 <!--
@@ -386,8 +386,8 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="ycc编译原理实验---2020年春">YCC编译原理实验 - 2020年春</h1>
 <blockquote class="book-hint warning">
-  <p>欢迎选择我们的编译原理实验👏，你可以此这个网站查看实验要求，指导以及常见问题。</p>
-<p>如果你有任何问题无法从本站获取答案，欢迎在每个页面的下方进行评论，或者通过下方的联系方式联系我们的助教。</p>
+  <p>欢迎选择我们的编译原理实验👏，你可以这个网站查看实验要求，实验指导以及常见问题。</p>
+<p>如果你有任何问题无法从本站获取答案，欢迎在每个页面下方的评论区进行提问，或者通过下方的联系方式联系我们。</p>
 
 </blockquote>
 
@@ -404,7 +404,9 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 <p>你不需要从头设计你的程序结构，我们提供一个基于
   <a href="https://yan-lang.github.io/">Yan Foundation</a>
-<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>的编译器模版供你使用，你需要<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>基于这个模版构建你的编译器，并通过我们的评测网站提交你的程序进行评分。</p>
+<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>的编译器模版供你使用，你需要<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>基于这个模版构建你的编译器，并通过我们的
+  <a href="https://zeqianglai.cn">评测网站</a>
+提交你的程序进行评分。</p>
 <p>详细的实验要求请查看
   <a href="/ycc/lab/summary/">实验综述</a>
 以及
@@ -481,7 +483,7 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/a3a4503d1595caad306631621de201125857e207" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/8c69a3315a78e71795b0d09b72c7cd1591229ea0" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Mar 22, 2020</span>
     </a>
