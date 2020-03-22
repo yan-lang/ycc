@@ -1,6 +1,7 @@
 # hugo server --disableFastRender --baseURL=http://0.0.0.0:1313
 
-title: YCC实验2020
+title: YCC实验 - 2020
+description: YCC编译原理实验 - 2020年春
 theme: book
 baseURL: https://yan-lang.github.io/ycc/
 
@@ -42,9 +43,12 @@ languages:
 menu:
   # before: []
   after:
+    - name: "Submit"
+      url: "https://zeqianglai.cn"
+      weight: 6
     - name: "Github"
       url: "https://github.com/yan-lang/ycc"
-      weight: 10
+      weight: 8
     - name: "Yan.io"
       url: "https://yan-lang.github.io/"
       weight: 10

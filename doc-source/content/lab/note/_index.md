@@ -1,6 +1,6 @@
 ---
 bookCollapseSection: true
-weight: 2
+weight: 7
 title: 实验说明
 ---
 

@@ -1,41 +1,46 @@
 ---
 title: Introduction
 type: docs
+BookComments: false
 ---
 
-# Acerbo datus maxime
+# YCC编译原理实验 - 2020年春
 
-{{< columns >}}
-## Astris ipse furtiva
+{{< hint warning >}}
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+欢迎选择我们的编译原理实验👏，你可以此这个网站查看实验要求，指导以及常见问题。
 
-<--->
+如果你有任何问题无法从本站获取答案，欢迎在每个页面的下方进行评论，或者通过下方的联系方式联系我们的助教。
 
-## Suis quot vota
+{{< /hint >}}
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
-{{< /columns >}}
+{{< hint danger >}}
 
+该实验框架**仍在开发**中，目前已经基本完成词法和语法分析任务的框架开发，欢迎试用！
 
-## Tempora nisi nunc
+{{< /hint >}}
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+## 编程实验
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
+在这个实验中，你们被要求使用**Java**为[YC]({{< relref "/lab/lang-std" >}})语言编写一个编译器YCC[^1]。
 
-## Locis suis novi cum suoque decidit eadem
+> YC(Yan C)是C语言的一个子集(一个合法的YC程序也是一个合法的C程序)，我们大幅精简了C语言的语法，以确保你可以在这个学期内完成这个实验。
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+你不需要从头设计你的程序结构，我们提供一个基于[Yan Foundation](https://yan-lang.github.io/)[^2]的编译器模版供你使用，你需要[^3]基于这个模版构建你的编译器，并通过我们的评测网站提交你的程序进行评分。
+
+详细的实验要求请查看[实验综述]({{< relref "/lab/summary" >}})以及[实验说明]({{< relref "/lab/note" >}})，以下是你需要完成的实验和截止日期:
+
+| 实验名称                                         | 持续时间         | 截止日期 |
+| ------------------------------------------------ | ---------------- | -------- |
+| [Lab1: 词法分析]({{< relref "lab/note/lab1" >}}) | 第三周           | 待定     |
+| [Lab2: 语法分析]({{< relref "lab/note/lab2" >}}) | 第四周 ～ 第五周 | 待定     |
+| [Lab3: 语义分析]()                               | 第六周 ～ 第七周 | 待定     |
+| [Lab4: 中间代码生成]()                           | 第八周 ～ 第九周 | 待定     |
+
+## 书面作业
+
+1. [语言认知实验](): 在这个实验中你被要求使用5种语言实现大数乘法算法。
+
+[^1]: YCC是Yan C Compiler的缩写。
+[^2]: Yan Foundation是由我们课程组使用Java开发的编译器框架。
+[^3]: 事实上，这是强制要求，我们的自动评测基于这个Yan Foundation框架。
