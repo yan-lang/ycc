@@ -1,0 +1,30 @@
+unknown
+identifier
+int lit
+float lit
+add
+minus
+multi
+div
+gt
+gte
+lt
+lte
+eq
+neq
+assign
+kw int,      symbol=int,      group=keyword
+kw float,    symbol=float,    group=keyword
+kw void,     symbol=void,     group=keyword
+kw if,       symbol=if,       group=keyword
+kw else,     symbol=else,     group=keyword
+kw while,    symbol=while,    group=keyword
+kw continue, symbol=continue, group=keyword
+kw break,    symbol=break,    group=keyword
+kw return,   symbol=return,   group=keyword
+lparen
+rparen
+lbrace
+rbrace
+colon
+comma
