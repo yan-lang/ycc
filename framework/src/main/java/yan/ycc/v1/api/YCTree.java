@@ -24,6 +24,12 @@ public abstract class YCTree extends Tree {
         public void accept(Visitor visitor) { visitor.visit(this);}
     }
 
+    /**
+     * 变量定义
+     * <pre>
+     *     type identifier [= expression]
+     * </pre>
+     */
     public static class VarDecl extends Stmt {
         public Type type;
         public Id name;
@@ -42,6 +48,15 @@ public abstract class YCTree extends Tree {
         public void accept(Visitor visitor) { visitor.visit(this);}
     }
 
+    /**
+     * 函数定义
+     * <p>YC1函数定义和实现必须一起。</p>
+     * <pre>
+     *     type identifier(parameters) {
+     *         body
+     *     }
+     * </pre>
+     */
     public static class FuncDecl extends YCTree {
         public Type returnType;
         public Id name;
@@ -65,6 +80,14 @@ public abstract class YCTree extends Tree {
     public static abstract class Stmt extends YCTree {
     }
 
+    /**
+     * 代码块
+     * <pre>
+     *     {
+     *         body
+     *     }
+     * </pre>
+     */
     public static class Block extends Stmt {
         public List<Stmt> stmts;
 
@@ -80,6 +103,13 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * 表达式语句
+     * <p>一个表达式接一个分号。通常会产生副作用，如变量赋值{@code a=10}。</p>
+     * <pre>
+     *     expr;
+     * </pre>
+     */
     public static class ExprStmt extends Stmt {
         public Expr expr;
 
@@ -95,6 +125,17 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * If语句
+     * <p>可能有{@code else}, 不支持{@code else if}。</p>
+     * <pre>
+     *     if(expression) {
+     *         body
+     *     } else {
+     *         body
+     *     }
+     * </pre>
+     */
     public static class IfStmt extends Stmt {
         public Expr cond;
         public Block thenBody;
@@ -114,6 +155,14 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * While循环
+     * <pre>
+     *     while(expression) {
+     *         body
+     *     }
+     * </pre>
+     */
     public static class WhileStmt extends Stmt {
         public Expr cond;
         public Block body;
@@ -131,6 +180,12 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * Return语句
+     * <pre>
+     *     'return' expression? ';'
+     * </pre>
+     */
     public static class ReturnStmt extends Stmt {
         public Expr expr;
 
@@ -146,6 +201,12 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * 空语句
+     * <pre>
+     *     ;
+     * </pre>
+     */
     public static class EmptyStmt extends Stmt {
         @Override
         public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
@@ -155,6 +216,12 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * Continue语句
+     * <pre>
+     *     continue;
+     * </pre>
+     */
     public static class ContinueStmt extends Stmt {
         @Override
         public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
@@ -164,6 +231,12 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * Break语句
+     * <pre>
+     *     break;
+     * </pre>
+     */
     public static class BreakStmt extends Stmt {
         @Override
         public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
@@ -173,8 +246,13 @@ public abstract class YCTree extends Tree {
 
     }
 
-    public static abstract class Expr extends YCTree { }
+    public static abstract class Expr extends YCTree {
+    }
 
+    /**
+     * 运算符表达式
+     * <p>{@code OperatorExpr}是任何含有运算符的表达式的基类。</p>
+     */
     public static abstract class OperatorExpr extends Expr {
         public Operator operator;
 
@@ -183,6 +261,9 @@ public abstract class YCTree extends Tree {
         }
     }
 
+    /**
+     * 双目运算表达式
+     */
     public static class BinaryExpr extends OperatorExpr {
         public Expr lhs;
         public Expr rhs;
@@ -201,6 +282,9 @@ public abstract class YCTree extends Tree {
 
     }
 
+    /**
+     * 单目运算表达式
+     */
     public static class UnaryExpr extends OperatorExpr {
         public Expr arg;
 
