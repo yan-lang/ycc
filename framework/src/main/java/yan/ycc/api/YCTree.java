@@ -1,4 +1,4 @@
-package yan.ycc.v1.api;
+package yan.ycc.api;
 
 import yan.foundation.compiler.frontend.ast.Tree;
 
@@ -6,22 +6,28 @@ import java.util.List;
 
 public abstract class YCTree extends Tree {
 
-    public abstract <R> R accept(YCVisitor<R> visitor);
+    public abstract <R> R accept(Visitor<R> visitor);
 
-    public abstract void accept(Visitor visitor);
+    public abstract void accept(VoidVisitor visitor);
 
-    public static class Program extends YCTree {
+    /**
+     * 翻译单元(一个C源文件将编译成一个{@code TranslationUnit})
+     * <pre>
+     *     (VarDecl | FuncDecl) *
+     * </pre>
+     */
+    public static class TranslationUnit extends YCTree {
         public List<YCTree> decls;
 
-        public Program(List<YCTree> decls) {
+        public TranslationUnit(List<YCTree> decls) {
             this.decls = decls;
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
     /**
@@ -35,6 +41,10 @@ public abstract class YCTree extends Tree {
         public Id name;
         public Expr init;
 
+        public VarDecl(Type type, Id name) {
+            this(type, name, null);
+        }
+
         public VarDecl(Type type, Id name, Expr init) {
             this.type = type;
             this.name = name;
@@ -42,10 +52,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
     /**
@@ -71,10 +81,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
     public static abstract class Stmt extends YCTree {
@@ -96,10 +106,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -118,10 +128,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -148,10 +158,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -173,10 +183,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -194,10 +204,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -209,10 +219,10 @@ public abstract class YCTree extends Tree {
      */
     public static class EmptyStmt extends Stmt {
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -224,10 +234,10 @@ public abstract class YCTree extends Tree {
      */
     public static class ContinueStmt extends Stmt {
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -239,10 +249,10 @@ public abstract class YCTree extends Tree {
      */
     public static class BreakStmt extends Stmt {
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -275,10 +285,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -294,10 +304,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
     /**
@@ -317,10 +327,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -336,10 +346,10 @@ public abstract class YCTree extends Tree {
         public List<Expr> args;
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -353,10 +363,10 @@ public abstract class YCTree extends Tree {
         public TypeTag type;
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -371,10 +381,10 @@ public abstract class YCTree extends Tree {
         }
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
 
     }
 
@@ -389,33 +399,10 @@ public abstract class YCTree extends Tree {
         public Object value;
 
         @Override
-        public <R> R accept(YCVisitor<R> visitor) { return visitor.visit(this); }
+        public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
         @Override
-        public void accept(Visitor visitor) { visitor.visit(this);}
-    }
-
-    // @formatter:off
-    public interface Visitor {
-        default void visitOthers(YCTree that) {}
-        default void visit(Program that)      { visitOthers(that); }
-        default void visit(VarDecl that)      { visitOthers(that); }
-        default void visit(FuncDecl that)     { visitOthers(that); }
-        default void visit(Block that)        { visitOthers(that); }
-        default void visit(ExprStmt that)     { visitOthers(that); }
-        default void visit(IfStmt that)       { visitOthers(that); }
-        default void visit(WhileStmt that)    { visitOthers(that); }
-        default void visit(ReturnStmt that)   { visitOthers(that); }
-        default void visit(EmptyStmt that)    { visitOthers(that); }
-        default void visit(ContinueStmt that) { visitOthers(that); }
-        default void visit(BreakStmt that)    { visitOthers(that); }
-        default void visit(BinaryExpr that)   { visitOthers(that); }
-        default void visit(UnaryExpr that)    { visitOthers(that); }
-        default void visit(TypeCastExpr that) { visitOthers(that); }
-        default void visit(FunCall that)      { visitOthers(that); }
-        default void visit(Type that)         { visitOthers(that); }
-        default void visit(Id that)           { visitOthers(that); }
-        default void visit(Literal that)      { visitOthers(that); }
+        public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
     public enum TypeTag {
@@ -436,5 +423,51 @@ public abstract class YCTree extends Tree {
         EQ,
         NEQ,
         ASSIGN,
+    }
+
+    // @formatter:off
+    public interface VoidVisitor {
+        default void visitOthers(YCTree that) {}
+        default void visit(TranslationUnit that)      { visitOthers(that); }
+        default void visit(VarDecl that)      { visitOthers(that); }
+        default void visit(FuncDecl that)     { visitOthers(that); }
+        default void visit(Block that)        { visitOthers(that); }
+        default void visit(ExprStmt that)     { visitOthers(that); }
+        default void visit(IfStmt that)       { visitOthers(that); }
+        default void visit(WhileStmt that)    { visitOthers(that); }
+        default void visit(ReturnStmt that)   { visitOthers(that); }
+        default void visit(EmptyStmt that)    { visitOthers(that); }
+        default void visit(ContinueStmt that) { visitOthers(that); }
+        default void visit(BreakStmt that)    { visitOthers(that); }
+        default void visit(BinaryExpr that)   { visitOthers(that); }
+        default void visit(UnaryExpr that)    { visitOthers(that); }
+        default void visit(TypeCastExpr that) { visitOthers(that); }
+        default void visit(FunCall that)      { visitOthers(that); }
+        default void visit(Type that)         { visitOthers(that); }
+        default void visit(Id that)           { visitOthers(that); }
+        default void visit(Literal that)      { visitOthers(that); }
+    }
+
+    // @formatter:off
+    public interface Visitor<R> {
+        default R visitOthers(YCTree that) { return null;}
+        default R visit(TranslationUnit that)      { return visitOthers(that); }
+        default R visit(VarDecl that)      { return visitOthers(that); }
+        default R visit(FuncDecl that)     { return visitOthers(that); }
+        default R visit(Block that)        { return visitOthers(that); }
+        default R visit(ExprStmt that)     { return visitOthers(that); }
+        default R visit(IfStmt that)       { return visitOthers(that); }
+        default R visit(WhileStmt that)    { return visitOthers(that); }
+        default R visit(ReturnStmt that)   { return visitOthers(that); }
+        default R visit(EmptyStmt that)    { return visitOthers(that); }
+        default R visit(ContinueStmt that) { return visitOthers(that); }
+        default R visit(BreakStmt that)    { return visitOthers(that); }
+        default R visit(BinaryExpr that)   { return visitOthers(that); }
+        default R visit(UnaryExpr that)    { return visitOthers(that); }
+        default R visit(TypeCastExpr that) { return visitOthers(that); }
+        default R visit(FunCall that)      { return visitOthers(that); }
+        default R visit(Type that)         { return visitOthers(that); }
+        default R visit(Id that)           { return visitOthers(that); }
+        default R visit(Literal that)      { return visitOthers(that); }
     }
 }

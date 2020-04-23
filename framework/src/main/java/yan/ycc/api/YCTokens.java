@@ -1,4 +1,4 @@
-package yan.ycc.v1.api;
+package yan.ycc.api;
 
 import java.util.List;
 import java.util.Map;
