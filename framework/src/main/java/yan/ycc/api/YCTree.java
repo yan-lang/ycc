@@ -1,6 +1,7 @@
 package yan.ycc.api;
 
 import yan.foundation.compiler.frontend.ast.Tree;
+import yan.foundation.compiler.frontend.lex.Token;
 
 import java.util.List;
 
@@ -345,6 +346,11 @@ public abstract class YCTree extends Tree {
         public Id name;
         public List<Expr> args;
 
+        public FunCall(Id name, List<Expr> args) {
+            this.name = name;
+            this.args = args;
+        }
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
@@ -361,6 +367,10 @@ public abstract class YCTree extends Tree {
      */
     public static class Type extends YCTree {
         public TypeTag type;
+
+        public Type(TypeTag type) {
+            this.type = type;
+        }
 
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
@@ -398,6 +408,11 @@ public abstract class YCTree extends Tree {
         public TypeTag type;
         public Object value;
 
+        public Literal(TypeTag type, Object value) {
+            this.type = type;
+            this.value = value;
+        }
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
@@ -423,6 +438,105 @@ public abstract class YCTree extends Tree {
         EQ,
         NEQ,
         ASSIGN,
+    }
+
+    public static class Factory {
+        protected int start;
+        protected int end;
+
+        protected List<Token> tokens;
+
+        public Factory(List<Token> tokens) {
+            this.tokens = tokens;
+        }
+
+        public Factory at(int start, int end) {
+            this.start = start;
+            this.end = end;
+            return this;
+        }
+
+        public TranslationUnit TranslationUnit(List<YCTree> decls) {
+            return setToken(new TranslationUnit(decls));
+        }
+
+        public VarDecl VarDecl(Type type, Id name) {
+            return setToken(new VarDecl(type, name));
+        }
+
+        public VarDecl VarDecl(Type type, Id name, Expr init) {
+            return setToken(new VarDecl(type, name, init));
+        }
+
+        public FuncDecl FuncDecl(Type returnType, Id name, List<VarDecl> params, Block body) {
+            return setToken(new FuncDecl(returnType, name, params, body));
+        }
+
+        public Block Block(List<Stmt> stmts) {
+            return setToken(new Block(stmts));
+        }
+
+        public ExprStmt ExprStmt(Expr expr) {
+            return setToken(new ExprStmt(expr));
+        }
+
+        public IfStmt IfStmt(Expr cond, Block thenBody, Block elseBody) {
+            return setToken(new IfStmt(cond, thenBody, elseBody));
+        }
+
+        public WhileStmt WhileStmt(Expr cond, Block body) {
+            return setToken(new WhileStmt(cond, body));
+        }
+
+        public ReturnStmt ReturnStmt(Expr expr) {
+            return setToken(new ReturnStmt(expr));
+        }
+
+        public EmptyStmt EmptyStmt() {
+            return setToken(new EmptyStmt());
+        }
+
+        public ContinueStmt ContinueStmt() {
+            return setToken(new ContinueStmt());
+        }
+
+        public BreakStmt BreakStmt() {
+            return setToken(new BreakStmt());
+        }
+
+        public BinaryExpr BinaryExpr(Operator operator, Expr lhs, Expr rhs) {
+            return setToken(new BinaryExpr(operator, lhs, rhs));
+        }
+
+        public UnaryExpr UnaryExpr(Operator operator, Expr arg) {
+            return setToken(new UnaryExpr(operator, arg));
+        }
+
+        public TypeCastExpr TypeCastExpr(Type type, Expr expr) {
+            return setToken(new TypeCastExpr(type, expr));
+        }
+
+        public FunCall FunCall(Id name, List<Expr> args) {
+            return setToken(new FunCall(name, args));
+        }
+
+        public Type Type(TypeTag type) {
+            return setToken(new Type(type));
+        }
+
+        public Id Id(String name) {
+            return setToken(new Id(name));
+        }
+
+        public Literal Literal(TypeTag type, Object value) {
+            return setToken(new Literal(type, value));
+        }
+
+        protected <T extends Tree> T setToken(T tree) {
+            tree.start = tokens.get(start);
+            tree.end = tokens.get(end);
+            return tree;
+        }
     }
 
     // @formatter:off

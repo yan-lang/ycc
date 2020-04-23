@@ -6,8 +6,10 @@ import yan.ycc.api.YCTree;
 
 public abstract class AbstractYCParser extends AbstractParser<YCTree.TranslationUnit> implements YCTokens {
 
+    protected YCTree.Factory F = new YCTree.Factory(tokens);
+
     public AbstractYCParser() {
-        super("parse");
+        super("YCParser");
     }
 
     protected void recovery() {
