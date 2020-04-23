@@ -27,6 +27,7 @@ weight: 2
 - [Enkel](http://jakubdziworski.github.io/categories.html#Enkel-ref): 基于Java, Antlr的语言，编译成Java字节码，有文字教程。
 - [c4](https://github.com/rswier/c4): C语言实现的C编译器，非常精简, 只有四个函数, 支持自举。
 - [xc](https://github.com/lotabout/write-a-C-interpreter): 修改自C4, 提供中文教程。
+- [finch](http://finch.stuffwithstuff.com/): 自制的动态语言, 使用C++编写
 
 ## 电子书
 
