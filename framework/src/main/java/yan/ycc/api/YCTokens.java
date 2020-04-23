@@ -60,16 +60,16 @@ public interface YCTokens {
 
     int RBRACE = 27;
 
-    int COLON = 28;
+    int SEMICOLON = 28;
 
     int COMMA = 29;
 
 
-    List<String> tokenNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "KW_INT", "KW_FLOAT", "KW_VOID", "KW_IF", "KW_ELSE", "KW_WHILE", "KW_CONTINUE", "KW_BREAK", "KW_RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "COLON", "COMMA");
+    List<String> tokenNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "KW_INT", "KW_FLOAT", "KW_VOID", "KW_IF", "KW_ELSE", "KW_WHILE", "KW_CONTINUE", "KW_BREAK", "KW_RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
 
-    List<String> tokenSymbolNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "COLON", "COMMA");
+    List<String> tokenSymbolNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
 
-    Map<String, Integer> keyword = Map.of("int", 15, "float", 16, "void", 17, "if", 18, "else", 19, "while", 20, "continue", 21, "break", 22, "return", 23);
+    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 15), Map.entry("float", 16), Map.entry("void", 17), Map.entry("if", 18), Map.entry("else", 19), Map.entry("while", 20), Map.entry("continue", 21), Map.entry("break", 22), Map.entry("return", 23));
 
 
 }

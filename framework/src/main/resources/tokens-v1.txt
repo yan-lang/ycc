@@ -26,5 +26,5 @@ lparen
 rparen
 lbrace
 rbrace
-colon
+semicolon
 comma
