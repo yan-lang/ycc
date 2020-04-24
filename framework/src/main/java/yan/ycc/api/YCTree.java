@@ -2,6 +2,7 @@ package yan.ycc.api;
 
 import yan.foundation.compiler.frontend.ast.Tree;
 import yan.foundation.compiler.frontend.lex.Token;
+import yan.foundation.compiler.frontend.semantic.v1.Type;
 
 import java.util.List;
 import java.util.Optional;
@@ -274,6 +275,7 @@ public abstract class YCTree extends Tree {
     }
 
     public static abstract class Expr extends YCTree {
+
     }
 
     /**
@@ -399,7 +401,7 @@ public abstract class YCTree extends Tree {
     /**
      * 标识符(Id -> Identifier)
      */
-    public static class Id extends YCTree {
+    public static class Id extends Expr {
         public String name;
 
         public Id(String name) {
@@ -420,7 +422,7 @@ public abstract class YCTree extends Tree {
      *     1.34, true / false, 12394
      * </pre>
      */
-    public static class Literal extends YCTree {
+    public static class Literal extends Expr {
         public TypeTag type;
         public Object value;
 
