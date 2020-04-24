@@ -4,6 +4,7 @@ import yan.foundation.compiler.frontend.ast.Tree;
 import yan.foundation.compiler.frontend.lex.Token;
 
 import java.util.List;
+import java.util.Optional;
 
 public abstract class YCTree extends Tree {
 
@@ -50,6 +51,11 @@ public abstract class YCTree extends Tree {
             this.type = type;
             this.name = name;
             this.init = init;
+        }
+
+        public Optional<Expr> init() {
+            if (init == null) return Optional.empty();
+            else return Optional.of(init);
         }
 
         @Override
@@ -158,6 +164,11 @@ public abstract class YCTree extends Tree {
             this.elseBody = elseBody;
         }
 
+        public Optional<Block> elseBody() {
+            if (elseBody == null) return Optional.empty();
+            else return Optional.of(elseBody);
+        }
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
@@ -198,10 +209,15 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class ReturnStmt extends Stmt {
-        public Expr expr;
+        public Expr value;
 
-        public ReturnStmt(Expr expr) {
-            this.expr = expr;
+        public ReturnStmt(Expr value) {
+            this.value = value;
+        }
+
+        public Optional<Expr> value() {
+            if (value == null) return Optional.empty();
+            else return Optional.of(value);
         }
 
         @Override
@@ -453,6 +469,12 @@ public abstract class YCTree extends Tree {
         public Factory at(int start, int end) {
             this.start = start;
             this.end = end;
+            return this;
+        }
+
+        public Factory at(int pos) {
+            this.start = pos;
+            this.end = pos;
             return this;
         }
 
