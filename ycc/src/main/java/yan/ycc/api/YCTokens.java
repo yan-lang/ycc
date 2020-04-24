@@ -34,42 +34,49 @@ public interface YCTokens {
 
     int ASSIGN = 14;
 
-    int KW_INT = 15;
+    int REL_OR = 15;
 
-    int KW_FLOAT = 16;
+    int REL_AND = 16;
 
-    int KW_VOID = 17;
+    int REL_NOT = 17;
 
-    int KW_IF = 18;
+    int KW_INT = 18;
 
-    int KW_ELSE = 19;
+    int KW_FLOAT = 19;
 
-    int KW_WHILE = 20;
+    int KW_VOID = 20;
 
-    int KW_CONTINUE = 21;
+    int KW_IF = 21;
 
-    int KW_BREAK = 22;
+    int KW_ELSE = 22;
 
-    int KW_RETURN = 23;
+    int KW_WHILE = 23;
 
-    int LPAREN = 24;
+    int KW_CONTINUE = 24;
 
-    int RPAREN = 25;
+    int KW_BREAK = 25;
 
-    int LBRACE = 26;
+    int KW_RETURN = 26;
 
-    int RBRACE = 27;
+    int LPAREN = 27;
 
-    int SEMICOLON = 28;
+    int RPAREN = 28;
 
-    int COMMA = 29;
+    int LBRACE = 29;
+
+    int RBRACE = 30;
+
+    int SEMICOLON = 31;
+
+    int COMMA = 32;
 
 
-    List<String> tokenNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "KW_INT", "KW_FLOAT", "KW_VOID", "KW_IF", "KW_ELSE", "KW_WHILE", "KW_CONTINUE", "KW_BREAK", "KW_RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
+    List<String> tokenNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "REL_OR", "REL_AND", "REL_NOT", "KW_INT", "KW_FLOAT", "KW_VOID", "KW_IF", "KW_ELSE", "KW_WHILE", "KW_CONTINUE", "KW_BREAK", "KW_RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
 
-    List<String> tokenSymbolNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
+    List<String> tokenSymbolNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "REL_OR", "REL_AND", "REL_NOT", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
 
-    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 15), Map.entry("float", 16), Map.entry("void", 17), Map.entry("if", 18), Map.entry("else", 19), Map.entry("while", 20), Map.entry("continue", 21), Map.entry("break", 22), Map.entry("return", 23));
+    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 18), Map.entry("float", 19), Map.entry("void", 20), Map.entry("if", 21), Map.entry("else", 22), Map.entry("while", 23), Map.entry("continue", 24), Map.entry("break", 25), Map.entry("return", 26));
+
 
 
 }
