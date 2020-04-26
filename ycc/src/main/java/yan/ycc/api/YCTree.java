@@ -278,6 +278,51 @@ public abstract class YCTree extends Tree {
 
     }
 
+    public static class Operator {
+        public enum Tag {
+            MULTI, DIV, ADD, MINUS,
+            GT, GTE, LT, LTE,
+            EQ, NEQ,
+            ASSIGN,
+            REL_NOT, REL_AND, REL_OR;
+        }
+
+        public Tag tag;
+        public Token token;
+
+        public Operator(Tag tag, Token token) {
+            this.tag = tag;
+            this.token = token;
+        }
+
+        public static Operator of(Tag tag) { return new Operator(tag, null); }
+
+        public static Operator of(Tag tag, Token token) { return new Operator(tag, token); }
+
+        public static Operator from(Token token) { return new Operator(getTagFromToken(token), token); }
+
+        public static Tag getTagFromToken(Token token) {
+            switch (token.type) {
+                case YCTokens.MULTI: return Tag.MULTI;
+                case YCTokens.DIV: return Tag.DIV;
+                case YCTokens.ADD: return Tag.ADD;
+                case YCTokens.MINUS: return Tag.MINUS;
+                case YCTokens.GT: return Tag.GT;
+                case YCTokens.GTE: return Tag.GTE;
+                case YCTokens.LT: return Tag.LT;
+                case YCTokens.LTE: return Tag.LTE;
+                case YCTokens.EQ: return Tag.EQ;
+                case YCTokens.NEQ: return Tag.NEQ;
+                case YCTokens.ASSIGN: return Tag.ASSIGN;
+                case YCTokens.REL_NOT: return Tag.REL_NOT;
+                case YCTokens.REL_AND: return Tag.REL_AND;
+                case YCTokens.REL_OR: return Tag.REL_OR;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + token.type);
+            }
+        }
+    }
+
     /**
      * 运算符表达式
      * <p>{@code OperatorExpr}是任何含有运算符的表达式的基类。</p>
@@ -442,20 +487,6 @@ public abstract class YCTree extends Tree {
         INT,
         FLOAT,
         VOID,
-    }
-
-    public enum Operator {
-        MULTI,
-        DIV,
-        PLUS,
-        MINUS,
-        GT,
-        GTE,
-        LT,
-        LTE,
-        EQ,
-        NEQ,
-        ASSIGN,
     }
 
     public static class Factory {
