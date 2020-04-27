@@ -301,6 +301,7 @@ public abstract class YCTree extends Tree {
 
         public static Operator from(Token token) { return new Operator(getTagFromToken(token), token); }
 
+        // @formatter:off
         public static Tag getTagFromToken(Token token) {
             switch (token.type) {
                 case YCTokens.MULTI: return Tag.MULTI;
@@ -320,6 +321,12 @@ public abstract class YCTree extends Tree {
                 default:
                     throw new IllegalStateException("Unexpected value: " + token.type);
             }
+        }
+        // @formatter:on
+
+        @Override
+        public String toString() {
+            return tag.toString();
         }
     }
 
