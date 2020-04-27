@@ -41,7 +41,7 @@ public class YCLang extends CommonLang<YCTree.TranslationUnit> {
 
         @Override
         public Formatter<YCTree.TranslationUnit> parse(boolean isInterpreting) {
-            return new ParseTreeFormatter();
+            return new ParseTreeFormatter(!isInterpreting);
         }
 
         @Override

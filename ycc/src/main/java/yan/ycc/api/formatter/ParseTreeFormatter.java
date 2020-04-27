@@ -6,7 +6,12 @@ import yan.foundation.utils.printer.XMLPrinter;
 import yan.ycc.api.YCTree;
 
 public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCTree.VoidVisitor {
+    private boolean verbose;
     private XMLPrinter printer = new XMLPrinter();
+
+    public ParseTreeFormatter(boolean verbose) {
+        this.verbose = verbose;
+    }
 
     @Override
     public String format(YCTree.TranslationUnit translationUnit) {
@@ -36,6 +41,12 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
         printer.closeElement();
     }
 
+    private void printField(String name, DetailPrinter detailPrinter) {
+        if (verbose) printer.openElement(name);
+        detailPrinter.print();
+        if (verbose) printer.closeElement();
+    }
+
     @Override
     public void visit(YCTree.TranslationUnit that) {
         printer.openElement("TranslationUnit");
@@ -52,19 +63,19 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     @Override
     public void visit(YCTree.VarDecl that) {
         print(that, () -> {
-            that.name.accept(this);
-            that.type.accept(this);
-            that.init().ifPresent(init -> init.accept(this));
+            printField("name", () -> that.name.accept(this));
+            printField("type", () -> that.type.accept(this));
+            that.init().ifPresent(init -> printField("init", () -> init.accept(this)));
         });
     }
 
     @Override
     public void visit(YCTree.FuncDecl that) {
         print(that, () -> {
-            that.name.accept(this);
-            that.returnType.accept(this);
-            that.params.forEach(param -> param.accept(this));
-            that.body.accept(this);
+            printField("name", () -> that.name.accept(this));
+            printField("returnType", () -> that.returnType.accept(this));
+            printField("params", () -> that.params.forEach(param -> printField("param", () -> param.accept(this))));
+            printField("body", () -> that.body.accept(this));
         });
     }
 
@@ -85,24 +96,24 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     @Override
     public void visit(YCTree.IfStmt that) {
         print(that, () -> {
-            that.cond.accept(this);
-            that.thenBody.accept(this);
-            that.elseBody().ifPresent(b -> b.accept(this));
+            printField("cond", () -> that.cond.accept(this));
+            printField("thenBody", () -> that.thenBody.accept(this));
+            that.elseBody().ifPresent(b -> printField("elseBody", () -> b.accept(this)));
         });
     }
 
     @Override
     public void visit(YCTree.WhileStmt that) {
         print(that, () -> {
-            that.cond.accept(this);
-            that.body.accept(this);
+            printField("cond", () -> that.cond.accept(this));
+            printField("body", () -> that.body.accept(this));
         });
     }
 
     @Override
     public void visit(YCTree.ReturnStmt that) {
         print(that, () -> {
-            that.value().ifPresent(v -> v.accept(this));
+            that.value().ifPresent(v -> printField("value", () -> v.accept(this)));
         });
     }
 
@@ -125,8 +136,8 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     public void visit(YCTree.BinaryExpr that) {
         print(that, () -> {
             printer.pushAttribute("op", that.operator.toString());
-            that.lhs.accept(this);
-            that.rhs.accept(this);
+            printField("lhs", () -> that.lhs.accept(this));
+            printField("rhs", () -> that.rhs.accept(this));
         });
     }
 
@@ -134,23 +145,23 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     public void visit(YCTree.UnaryExpr that) {
         print(that, () -> {
             printer.pushAttribute("op", that.operator.toString());
-            that.arg.accept(this);
+            printField("arg", () -> that.arg.accept(this));
         });
     }
 
     @Override
     public void visit(YCTree.TypeCastExpr that) {
         print(that, () -> {
-            that.type.accept(this);
-            that.expr.accept(this);
+            printField("type", () -> that.type.accept(this));
+            printField("expr", () -> that.expr.accept(this));
         });
     }
 
     @Override
     public void visit(YCTree.FunCall that) {
         print(that, () -> {
-            that.name.accept(this);
-            that.args.forEach(arg -> arg.accept(this));
+            printField("funcName", () -> that.name.accept(this));
+            printField("args", () -> that.args.forEach(arg -> printField("arg", () -> arg.accept(this))));
         });
     }
 
