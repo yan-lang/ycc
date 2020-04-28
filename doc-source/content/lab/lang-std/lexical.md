@@ -27,9 +27,9 @@ weight: 1
 | DIV    | `/`  | KW_IF       | `if`       | RBRACE    | `}`  |
 | GT     | `>`  | KW_ELSE     | `else`     | SEMICOLON | `;`  |
 | GTE    | `>=` | KW_WHILE    | `while`    | COMMA     | `,`  |
-| LT     | `<`  | KW_CONTINUE | `continue` |           |      |
-| LTE    | `<=` | KW_BREAK    | `break`    |           |      |
-| EQ     | `==` | KW_RETURN   | `return`   |           |      |
+| LT     | `<`  | KW_CONTINUE | `continue` | REL_AND   | `&&` |
+| LTE    | `<=` | KW_BREAK    | `break`    | REL_OR    | `||` |
+| EQ     | `==` | KW_RETURN   | `return`   | REL_NOT   | `!`  |
 | NEQ    | `!=` |             |            |           |      |
 | ASSIGN | `=`  |             |            |           |      |
 

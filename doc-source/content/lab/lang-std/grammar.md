@@ -63,10 +63,10 @@ FunCall   ::=  Id '(' ArgList ')'
 ArgList   ::=  Expr ((',' Expr)* | ε)  // 实参列表
 
 UnaryExpr     ::= UnaryOp Expression
-UnaryOp       ::=  '-'
+UnaryOp       ::=  '-' | '!'
 
 BinaryExpr    ::=  Expr BinaryOp Expr
-BinaryOp      ::=  '*' | '/' | '+' | '-' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '='
+BinaryOp      ::=  '*' | '/' | '+' | '-' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '=' | '&&' | '||'
 
 TypeCastExpr  ::=  '(' Type ')' Expression
 
