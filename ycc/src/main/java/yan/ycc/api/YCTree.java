@@ -178,6 +178,10 @@ public abstract class YCTree extends Tree {
 
     }
 
+    public static abstract class LoopStmt extends Stmt {
+
+    }
+
     /**
      * While循环
      * <pre>
@@ -186,7 +190,7 @@ public abstract class YCTree extends Tree {
      *     }
      * </pre>
      */
-    public static class WhileStmt extends Stmt {
+    public static class WhileStmt extends LoopStmt {
         public Expr cond;
         public Block body;
 
@@ -211,6 +215,11 @@ public abstract class YCTree extends Tree {
      */
     public static class ReturnStmt extends Stmt {
         public Expr value;
+
+        /**
+         * 这个Return语句相关联的函数, 应当在语义分析的时候求出来
+         */
+        public FuncDecl func;
 
         public ReturnStmt(Expr value) {
             this.value = value;
@@ -251,6 +260,11 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class ContinueStmt extends Stmt {
+        /**
+         * 这个Break语句相关联的循环语句, 应当在语义分析的时候求出来
+         */
+        public LoopStmt attachedLoop;
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
@@ -266,6 +280,11 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class BreakStmt extends Stmt {
+        /**
+         * 这个Break语句相关联的循环语句, 应当在语义分析的时候求出来
+         */
+        public LoopStmt attachedLoop;
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
