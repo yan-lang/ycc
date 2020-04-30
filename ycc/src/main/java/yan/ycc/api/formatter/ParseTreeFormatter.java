@@ -63,7 +63,7 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     @Override
     public void visit(YCTree.VarDecl that) {
         print(that, () -> {
-            printField("name", () -> that.name.accept(this));
+            printField("name", () -> that.id.accept(this));
             printField("type", () -> that.type.accept(this));
             that.init().ifPresent(init -> printField("init", () -> init.accept(this)));
         });
@@ -72,7 +72,7 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     @Override
     public void visit(YCTree.FuncDecl that) {
         print(that, () -> {
-            printField("name", () -> that.name.accept(this));
+            printField("name", () -> that.id.accept(this));
             printField("returnType", () -> that.returnType.accept(this));
             printField("params", () -> that.params.forEach(param -> printField("param", () -> param.accept(this))));
             printField("body", () -> that.body.accept(this));

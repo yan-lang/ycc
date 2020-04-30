@@ -2,6 +2,10 @@ package yan.ycc.api;
 
 import yan.foundation.compiler.frontend.ast.Tree;
 import yan.foundation.compiler.frontend.lex.Token;
+import yan.foundation.compiler.frontend.semantic.v1.Scope;
+import yan.foundation.compiler.frontend.semantic.v1.Symbol;
+import yan.foundation.compiler.frontend.semantic.v1.symbol.MethodSymbol;
+import yan.foundation.compiler.frontend.semantic.v1.symbol.VarSymbol;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +24,11 @@ public abstract class YCTree extends Tree {
      */
     public static class TranslationUnit extends YCTree {
         public List<YCTree> decls;
+
+        /**
+         * 全局符号表
+         */
+        public Scope scope;
 
         public TranslationUnit(List<YCTree> decls) {
             this.decls = decls;
@@ -40,16 +49,21 @@ public abstract class YCTree extends Tree {
      */
     public static class VarDecl extends Stmt {
         public TypeTree type;
-        public Id name;
+        public Id id;
         public Expr init;
 
-        public VarDecl(TypeTree type, Id name) {
-            this(type, name, null);
+        /**
+         * 类型检查时可能需要用到（确认初始化表达式类型与定义类型是否兼容）
+         */
+        public VarSymbol symbol;
+
+        public VarDecl(TypeTree type, Id id) {
+            this(type, id, null);
         }
 
-        public VarDecl(TypeTree type, Id name, Expr init) {
+        public VarDecl(TypeTree type, Id id, Expr init) {
             this.type = type;
-            this.name = name;
+            this.id = id;
             this.init = init;
         }
 
@@ -76,13 +90,18 @@ public abstract class YCTree extends Tree {
      */
     public static class FuncDecl extends YCTree {
         public TypeTree returnType;
-        public Id name;
+        public Id id;
         public List<VarDecl> params;
         public Block body;
 
-        public FuncDecl(TypeTree returnType, Id name, List<VarDecl> params, Block body) {
+        /**
+         * 检查return语句的返回值是否和函数定义兼容可能会用到
+         */
+        public MethodSymbol symbol;
+
+        public FuncDecl(TypeTree returnType, Id id, List<VarDecl> params, Block body) {
             this.returnType = returnType;
-            this.name = name;
+            this.id = id;
             this.params = params;
             this.body = body;
         }
@@ -481,6 +500,11 @@ public abstract class YCTree extends Tree {
      */
     public static class Id extends Expr {
         public String name;
+
+        /**
+         * 该标识符对应的符号, 需要在名字解析(name resolve)阶段算出
+         */
+        public Symbol symbol;
 
         public Id(String name) {
             this.name = name;
