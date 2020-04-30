@@ -2,7 +2,6 @@ package yan.ycc.api;
 
 import yan.foundation.compiler.frontend.ast.Tree;
 import yan.foundation.compiler.frontend.lex.Token;
-import yan.foundation.compiler.frontend.semantic.v1.Type;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,15 +39,15 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class VarDecl extends Stmt {
-        public Type type;
+        public TypeTree type;
         public Id name;
         public Expr init;
 
-        public VarDecl(Type type, Id name) {
+        public VarDecl(TypeTree type, Id name) {
             this(type, name, null);
         }
 
-        public VarDecl(Type type, Id name, Expr init) {
+        public VarDecl(TypeTree type, Id name, Expr init) {
             this.type = type;
             this.name = name;
             this.init = init;
@@ -76,12 +75,12 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class FuncDecl extends YCTree {
-        public Type returnType;
+        public TypeTree returnType;
         public Id name;
         public List<VarDecl> params;
         public Block body;
 
-        public FuncDecl(Type returnType, Id name, List<VarDecl> params, Block body) {
+        public FuncDecl(TypeTree returnType, Id name, List<VarDecl> params, Block body) {
             this.returnType = returnType;
             this.name = name;
             this.params = params;
@@ -95,8 +94,7 @@ public abstract class YCTree extends Tree {
         public void accept(VoidVisitor visitor) { visitor.visit(this);}
     }
 
-    public static abstract class Stmt extends YCTree {
-    }
+    public static abstract class Stmt extends YCTree {}
 
     /**
      * 代码块
@@ -408,10 +406,10 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class TypeCastExpr extends Expr {
-        public Type type;
+        public TypeTree type;
         public Expr expr;
 
-        public TypeCastExpr(Type type, Expr expr) {
+        public TypeCastExpr(TypeTree type, Expr expr) {
             this.type = type;
             this.expr = expr;
         }
@@ -449,15 +447,24 @@ public abstract class YCTree extends Tree {
     }
 
     /**
-     * 数据类型
+     * 所有数据类型语法树的基类
+     * <p>常见的数据类型包括: (1) 原始类型， (2) 数组类型，(3) 聚合类型(结构体, 类)，(4) 函数指针等
+     * </p>
+     */
+    public abstract static class TypeTree extends YCTree {}
+
+    /**
+     * 基础数据类型
      * <pre>
      *     int, float, void
      * </pre>
      */
-    public static class Type extends YCTree {
-        public TypeTag type;
+    public static class PrimitiveType extends TypeTree {
+        public enum Tag { INT, FLOAT, VOID,}
 
-        public Type(TypeTag type) {
+        public Tag type;
+
+        public PrimitiveType(Tag type) {
             this.type = type;
         }
 
@@ -494,10 +501,10 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class Literal extends Expr {
-        public TypeTag type;
+        public PrimitiveType.Tag type;
         public Object value;
 
-        public Literal(TypeTag type, Object value) {
+        public Literal(PrimitiveType.Tag type, Object value) {
             this.type = type;
             this.value = value;
         }
@@ -507,12 +514,6 @@ public abstract class YCTree extends Tree {
 
         @Override
         public void accept(VoidVisitor visitor) { visitor.visit(this);}
-    }
-
-    public enum TypeTag {
-        INT,
-        FLOAT,
-        VOID,
     }
 
     public static class Factory {
@@ -541,15 +542,15 @@ public abstract class YCTree extends Tree {
             return setToken(new TranslationUnit(decls));
         }
 
-        public VarDecl VarDecl(Type type, Id name) {
+        public VarDecl VarDecl(TypeTree type, Id name) {
             return setToken(new VarDecl(type, name));
         }
 
-        public VarDecl VarDecl(Type type, Id name, Expr init) {
+        public VarDecl VarDecl(TypeTree type, Id name, Expr init) {
             return setToken(new VarDecl(type, name, init));
         }
 
-        public FuncDecl FuncDecl(Type returnType, Id name, List<VarDecl> params, Block body) {
+        public FuncDecl FuncDecl(TypeTree returnType, Id name, List<VarDecl> params, Block body) {
             return setToken(new FuncDecl(returnType, name, params, body));
         }
 
@@ -593,7 +594,7 @@ public abstract class YCTree extends Tree {
             return setToken(new UnaryExpr(operator, arg));
         }
 
-        public TypeCastExpr TypeCastExpr(Type type, Expr expr) {
+        public TypeCastExpr TypeCastExpr(TypeTree type, Expr expr) {
             return setToken(new TypeCastExpr(type, expr));
         }
 
@@ -601,15 +602,15 @@ public abstract class YCTree extends Tree {
             return setToken(new FunCall(name, args));
         }
 
-        public Type Type(TypeTag type) {
-            return setToken(new Type(type));
+        public PrimitiveType PrimitiveType(PrimitiveType.Tag type) {
+            return setToken(new PrimitiveType(type));
         }
 
         public Id Id(String name) {
             return setToken(new Id(name));
         }
 
-        public Literal Literal(TypeTag type, Object value) {
+        public Literal Literal(PrimitiveType.Tag type, Object value) {
             return setToken(new Literal(type, value));
         }
 
@@ -638,7 +639,7 @@ public abstract class YCTree extends Tree {
         default void visit(UnaryExpr that)    { visitOthers(that); }
         default void visit(TypeCastExpr that) { visitOthers(that); }
         default void visit(FunCall that)      { visitOthers(that); }
-        default void visit(Type that)         { visitOthers(that); }
+        default void visit(PrimitiveType that)         { visitOthers(that); }
         default void visit(Id that)           { visitOthers(that); }
         default void visit(Literal that)      { visitOthers(that); }
     }
@@ -661,7 +662,7 @@ public abstract class YCTree extends Tree {
         default R visit(UnaryExpr that)    { return visitOthers(that); }
         default R visit(TypeCastExpr that) { return visitOthers(that); }
         default R visit(FunCall that)      { return visitOthers(that); }
-        default R visit(Type that)         { return visitOthers(that); }
+        default R visit(PrimitiveType that)         { return visitOthers(that); }
         default R visit(Id that)           { return visitOthers(that); }
         default R visit(Literal that)      { return visitOthers(that); }
     }

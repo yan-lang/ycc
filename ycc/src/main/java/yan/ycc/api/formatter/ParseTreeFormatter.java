@@ -166,7 +166,7 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     }
 
     @Override
-    public void visit(YCTree.Type that) {
+    public void visit(YCTree.PrimitiveType that) {
         print(that, true, () -> {
             printer.pushText(that.type.toString());
         });
