@@ -4,6 +4,7 @@ import yan.foundation.compiler.frontend.ast.Tree;
 import yan.foundation.compiler.frontend.lex.Token;
 import yan.foundation.compiler.frontend.semantic.v1.Scope;
 import yan.foundation.compiler.frontend.semantic.v1.Symbol;
+import yan.foundation.compiler.frontend.semantic.v1.Type;
 import yan.foundation.compiler.frontend.semantic.v1.symbol.MethodSymbol;
 import yan.foundation.compiler.frontend.semantic.v1.symbol.VarSymbol;
 
@@ -311,7 +312,10 @@ public abstract class YCTree extends Tree {
     }
 
     public static abstract class Expr extends YCTree {
-
+        /**
+         * 每个表达式都有一个类型，这个类型需要在类型检查的时候算出来
+         */
+        public Type evalType;
     }
 
     public static class Operator {
