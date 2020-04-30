@@ -13,6 +13,7 @@ public abstract class AbstractYCParser extends AbstractParser<YCTree.Translation
     }
 
     protected void recovery() {
+        advance();
         while (!isAtEnd()) {
             if (previous().type == SEMICOLON) return;
             if (previous().type == LBRACE) return;
