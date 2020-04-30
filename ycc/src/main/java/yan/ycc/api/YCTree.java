@@ -449,11 +449,11 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class FunCall extends Expr {
-        public Id name;
+        public Id funcID;
         public List<Expr> args;
 
-        public FunCall(Id name, List<Expr> args) {
-            this.name = name;
+        public FunCall(Id funcID, List<Expr> args) {
+            this.funcID = funcID;
             this.args = args;
         }
 
@@ -566,16 +566,16 @@ public abstract class YCTree extends Tree {
             return setToken(new TranslationUnit(decls));
         }
 
-        public VarDecl VarDecl(TypeTree type, Id name) {
-            return setToken(new VarDecl(type, name));
+        public VarDecl VarDecl(TypeTree type, Id id) {
+            return setToken(new VarDecl(type, id));
         }
 
-        public VarDecl VarDecl(TypeTree type, Id name, Expr init) {
-            return setToken(new VarDecl(type, name, init));
+        public VarDecl VarDecl(TypeTree type, Id id, Expr init) {
+            return setToken(new VarDecl(type, id, init));
         }
 
-        public FuncDecl FuncDecl(TypeTree returnType, Id name, List<VarDecl> params, Block body) {
-            return setToken(new FuncDecl(returnType, name, params, body));
+        public FuncDecl FuncDecl(TypeTree returnType, Id id, List<VarDecl> params, Block body) {
+            return setToken(new FuncDecl(returnType, id, params, body));
         }
 
         public Block Block(List<Stmt> stmts) {
@@ -622,8 +622,8 @@ public abstract class YCTree extends Tree {
             return setToken(new TypeCastExpr(type, expr));
         }
 
-        public FunCall FunCall(Id name, List<Expr> args) {
-            return setToken(new FunCall(name, args));
+        public FunCall FunCall(Id funcID, List<Expr> args) {
+            return setToken(new FunCall(funcID, args));
         }
 
         public PrimitiveType PrimitiveType(PrimitiveType.Tag type) {

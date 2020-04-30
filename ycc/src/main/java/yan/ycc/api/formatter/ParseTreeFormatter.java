@@ -160,7 +160,7 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     @Override
     public void visit(YCTree.FunCall that) {
         print(that, () -> {
-            printField("funcName", () -> that.name.accept(this));
+            printField("funcName", () -> that.funcID.accept(this));
             printField("args", () -> that.args.forEach(arg -> printField("arg", () -> arg.accept(this))));
         });
     }
