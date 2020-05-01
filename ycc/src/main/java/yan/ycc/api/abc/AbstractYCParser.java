@@ -23,7 +23,7 @@ public abstract class AbstractYCParser extends AbstractParser<YCTree.Translation
 
     @Override
     protected TokenTypeStringMapper getTokenTypeStringMapper() {
-        return tokenNames::get;
+        return tokenSymbolNames::get;
     }
 
 }
