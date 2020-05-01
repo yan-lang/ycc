@@ -71,9 +71,9 @@ public interface YCTokens {
     int COMMA = 32;
 
 
-    List<String> tokenNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "REL_OR", "REL_AND", "REL_NOT", "KW_INT", "KW_FLOAT", "KW_VOID", "KW_IF", "KW_ELSE", "KW_WHILE", "KW_CONTINUE", "KW_BREAK", "KW_RETURN", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
+    List<String> tokenNames = List.of("unknown", "identifier", "integer literal", "float literal", "add", "minus", "multiply", "divide", "greater than", "greater than or equal", "less than", "less than or equal", "equal", "not equal", "assign", "relational or", "relational and", "relational not", "kw int", "kw float", "kw void", "kw if", "kw else", "kw while", "kw continue", "kw break", "kw return", "left parenthesis", "right parenthesis", "left brace", "right brace", "semicolon", "comma");
 
-    List<String> tokenSymbolNames = List.of("UNKNOWN", "IDENTIFIER", "INT_LIT", "FLOAT_LIT", "ADD", "MINUS", "MULTI", "DIV", "GT", "GTE", "LT", "LTE", "EQ", "NEQ", "ASSIGN", "REL_OR", "REL_AND", "REL_NOT", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "SEMICOLON", "COMMA");
+    List<String> tokenSymbolNames = List.of("unknown", "identifier", "integer literal", "float literal", "+", "-", "*", "/", ">", ">=", "<", "<=", "==", "!=", "=", "||", "&&", "!", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "(", ")", "{", "}", ";", ",");
 
     Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 18), Map.entry("float", 19), Map.entry("void", 20), Map.entry("if", 21), Map.entry("else", 22), Map.entry("while", 23), Map.entry("continue", 24), Map.entry("break", 25), Map.entry("return", 26));
 
