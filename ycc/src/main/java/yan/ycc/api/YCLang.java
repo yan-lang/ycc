@@ -56,7 +56,7 @@ public class YCLang extends CommonLang<YCTree.TranslationUnit> {
 
         @Override
         public Formatter<YCTree.TranslationUnit> typeCheck(boolean isInterpreting) {
-            return new TypeTreeFormatter();
+            return new TypeTreeFormatter(!isInterpreting);
         }
     }
 }
