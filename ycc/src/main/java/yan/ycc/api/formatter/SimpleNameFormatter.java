@@ -1,9 +1,8 @@
 package yan.ycc.api.formatter;
 
-import yan.foundation.driver.lang.Formatter;
 import yan.ycc.api.YCTree;
 
-public class NameTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCTree.VoidVisitor {
+public class SimpleNameFormatter extends AbstractNameFormatter {
 
     StringBuilder builder = new StringBuilder();
 
@@ -12,11 +11,6 @@ public class NameTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
         builder = new StringBuilder();
         program.accept(this);
         return builder.toString();
-    }
-
-    @Override
-    public void visit(YCTree.TranslationUnit that) {
-        that.decls.forEach(decl -> decl.accept(this));
     }
 
     @Override
@@ -31,51 +25,6 @@ public class NameTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
         builder.append(String.format("line %d: def func '%s'\n", that.start.line, that.id.name));
         that.params.forEach(param -> param.accept(this));
         that.body.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.ReturnStmt that) {
-        if (that.value != null) that.value.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.IfStmt that) {
-        that.cond.accept(this);
-        that.thenBody.accept(this);
-        if (that.elseBody != null) that.elseBody.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.WhileStmt that) {
-        that.cond.accept(this);
-        that.body.accept(this);
-    }
-
-
-    @Override
-    public void visit(YCTree.ExprStmt that) {
-        that.expr.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.Block that) {
-        that.stmts.forEach(stmt -> stmt.accept(this));
-    }
-
-    @Override
-    public void visit(YCTree.UnaryExpr that) {
-        that.arg.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.BinaryExpr that) {
-        that.lhs.accept(this);
-        that.rhs.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.TypeCastExpr that) {
-        that.expr.accept(this);
     }
 
     @Override

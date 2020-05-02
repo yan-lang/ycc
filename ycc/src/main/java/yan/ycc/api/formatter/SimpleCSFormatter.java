@@ -1,9 +1,8 @@
 package yan.ycc.api.formatter;
 
-import yan.foundation.driver.lang.Formatter;
 import yan.ycc.api.YCTree;
 
-public class CSTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCTree.VoidVisitor {
+public class SimpleCSFormatter extends AbstractCSFormatter {
     StringBuilder builder;
     final String template = "line %d: %s found, %s\n";
     final String detailTemplate = "attached %s at line %d";
@@ -34,31 +33,4 @@ public class CSTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCTre
                 String.format(detailTemplate, "loop", that.attachedLoop.start.line);
         builder.append(String.format(template, that.start.line, "break", detail));
     }
-
-    @Override
-    public void visit(YCTree.TranslationUnit that) {
-        that.decls.forEach(decl -> decl.accept(this));
-    }
-
-    @Override
-    public void visit(YCTree.FuncDecl that) {
-        that.body.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.WhileStmt that) {
-        that.body.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.IfStmt that) {
-        that.thenBody.accept(this);
-        if (that.elseBody != null) that.elseBody.accept(this);
-    }
-
-    @Override
-    public void visit(YCTree.Block that) {
-        that.stmts.forEach(stmt -> stmt.accept(this));
-    }
-
 }

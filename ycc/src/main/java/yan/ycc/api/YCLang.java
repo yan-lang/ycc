@@ -7,10 +7,7 @@ import yan.foundation.compiler.frontend.lex.Token;
 import yan.foundation.compiler.frontend.lex.formatter.SimpleTokenFormatter;
 import yan.foundation.compiler.frontend.lex.formatter.XMLTokenFormatter;
 import yan.foundation.driver.lang.Formatter;
-import yan.ycc.api.formatter.CSTreeFormatter;
-import yan.ycc.api.formatter.NameTreeFormatter;
-import yan.ycc.api.formatter.ParseTreeFormatter;
-import yan.ycc.api.formatter.TypeTreeFormatter;
+import yan.ycc.api.formatter.*;
 
 import java.util.List;
 
@@ -46,12 +43,12 @@ public class YCLang extends CommonLang<YCTree.TranslationUnit> {
 
         @Override
         public Formatter<YCTree.TranslationUnit> cs(boolean isInterpreting) {
-            return new CSTreeFormatter();
+            return isInterpreting ? new SimpleCSFormatter() : new CSFormatter();
         }
 
         @Override
         public Formatter<YCTree.TranslationUnit> nameResolve(boolean isInterpreting) {
-            return new NameTreeFormatter();
+            return isInterpreting ? new SimpleNameFormatter() : new NameFormatter();
         }
 
         @Override
