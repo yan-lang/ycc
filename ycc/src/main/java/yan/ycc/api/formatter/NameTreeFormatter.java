@@ -21,14 +21,14 @@ public class NameTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
 
     @Override
     public void visit(YCTree.VarDecl that) {
-        builder.append(String.format("def var '%s' at line %d, type: %s\n",
-                                     that.id.name, that.start.line, that.symbol.type));
+        builder.append(String.format("line %d: def var '%s'\n",
+                                     that.start.line, that.id.name));
         if (that.init != null) that.init.accept(this);
     }
 
     @Override
     public void visit(YCTree.FuncDecl that) {
-        builder.append(String.format("def func '%s' at line %d\n", that.id.name, that.start.line));
+        builder.append(String.format("line %d: def func '%s'\n", that.start.line, that.id.name));
         that.params.forEach(param -> param.accept(this));
         that.body.accept(this);
     }
@@ -75,21 +75,19 @@ public class NameTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
 
     @Override
     public void visit(YCTree.TypeCastExpr that) {
-//        builder.append(String.format("ref type '%s' at line %d",
-//                                     that.castedType.symbol.name, that.castedType.symbol.tree.start.line));
         that.expr.accept(this);
     }
 
     @Override
     public void visit(YCTree.FunCall that) {
-        builder.append(String.format("ref func '%s' at line %d\n",
-                                     that.funcID.symbol.name, that.funcID.symbol.tree.start.line));
+        builder.append(String.format("line %d: ref func '%s' at line %d\n",
+                                     that.start.line, that.funcID.symbol.name, that.funcID.symbol.tree.start.line));
         that.args.forEach(arg -> arg.accept(this));
     }
 
     @Override
     public void visit(YCTree.Id that) {
-        builder.append(String.format("ref var '%s' at line %d\n",
-                                     that.symbol.name, that.symbol.tree.start.line));
+        builder.append(String.format("line %d: ref var '%s' at line %d\n",
+                                     that.start.line, that.symbol.name, that.symbol.tree.start.line));
     }
 }
