@@ -21,6 +21,7 @@ public class NameFormatter extends AbstractNameFormatter {
         printer.pushSimpleElement("type", "var");
         printer.pushSimpleElement("name", that.id.name);
         printer.closeElement();
+        that.init().ifPresent(init -> init.accept(this));
     }
 
     @Override
@@ -30,6 +31,8 @@ public class NameFormatter extends AbstractNameFormatter {
         printer.pushSimpleElement("type", "func");
         printer.pushSimpleElement("name", that.id.name);
         printer.closeElement();
+        that.params.forEach(param -> param.accept(this));
+        that.body.accept(this);
     }
 
     @Override
@@ -40,6 +43,7 @@ public class NameFormatter extends AbstractNameFormatter {
         printer.pushSimpleElement("name", that.funcID.name);
         printer.pushSimpleElement("refLine", String.valueOf(that.funcID.symbol.tree.start.line));
         printer.closeElement();
+        that.args.forEach(arg -> arg.accept(this));
     }
 
     @Override
