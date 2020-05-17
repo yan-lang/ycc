@@ -3,9 +3,9 @@ package yan.ycc.api;
 import yan.common.CommonFormatterFactory;
 import yan.common.CommonLang;
 import yan.common.CommonTaskFactory;
-import yan.foundation.compiler.frontend.lex.Token;
-import yan.foundation.compiler.frontend.lex.formatter.SimpleTokenFormatter;
-import yan.foundation.compiler.frontend.lex.formatter.XMLTokenFormatter;
+import yan.foundation.frontend.lex.Token;
+import yan.foundation.frontend.lex.formatter.SimpleTokenFormatter;
+import yan.foundation.frontend.lex.formatter.XMLTokenFormatter;
 import yan.foundation.driver.lang.Formatter;
 import yan.ycc.api.formatter.*;
 

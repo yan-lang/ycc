@@ -1,6 +1,6 @@
 package yan.ycc.api.abc;
 
-import yan.foundation.compiler.frontend.parse.AbstractParser;
+import yan.foundation.frontend.parse.AbstractParser;
 import yan.ycc.api.YCTokens;
 import yan.ycc.api.YCTree;
 

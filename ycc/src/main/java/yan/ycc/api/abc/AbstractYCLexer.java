@@ -1,7 +1,7 @@
 package yan.ycc.api.abc;
 
-import yan.foundation.compiler.frontend.lex.AbstractLexer;
-import yan.foundation.compiler.frontend.lex.Vocabulary;
+import yan.foundation.frontend.lex.AbstractLexer;
+import yan.foundation.frontend.lex.Vocabulary;
 import yan.ycc.api.YCTokens;
 
 public abstract class AbstractYCLexer extends AbstractLexer implements YCTokens {
