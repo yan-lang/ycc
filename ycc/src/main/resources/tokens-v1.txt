@@ -13,9 +13,9 @@ lte,         less than or equal,    </=
 eq,          equal,           /=/=
 neq,         not equal,       !/=
 assign,      assign,          /=
-rel or,      relational or,   ||
-rel and,     relational and,  &&
-rel not,     relational not,  !
+lor,         logical or,   ||
+land,        logical and,  &&
+lnot,        logical not,  !
 kw int,      symbol=int,      group=keyword
 kw float,    symbol=float,    group=keyword
 kw void,     symbol=void,     group=keyword

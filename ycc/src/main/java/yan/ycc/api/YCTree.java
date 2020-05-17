@@ -324,7 +324,7 @@ public abstract class YCTree extends Tree {
             GT, GTE, LT, LTE,
             EQ, NEQ,
             ASSIGN,
-            REL_NOT, REL_AND, REL_OR;
+            LNOT, LAND, LOR;
         }
 
         public Tag tag;
@@ -355,9 +355,9 @@ public abstract class YCTree extends Tree {
                 case YCTokens.EQ: return Tag.EQ;
                 case YCTokens.NEQ: return Tag.NEQ;
                 case YCTokens.ASSIGN: return Tag.ASSIGN;
-                case YCTokens.REL_NOT: return Tag.REL_NOT;
-                case YCTokens.REL_AND: return Tag.REL_AND;
-                case YCTokens.REL_OR: return Tag.REL_OR;
+                case YCTokens.LNOT: return Tag.LNOT;
+                case YCTokens.LAND: return Tag.LAND;
+                case YCTokens.LOR: return Tag.LOR;
                 default:
                     throw new IllegalStateException("Unexpected value: " + token.type);
             }
@@ -483,7 +483,7 @@ public abstract class YCTree extends Tree {
      * </pre>
      */
     public static class PrimitiveType extends TypeTree {
-        public enum Tag { INT, FLOAT, VOID,}
+        public enum Tag {INT, FLOAT, VOID,}
 
         public Tag type;
 
