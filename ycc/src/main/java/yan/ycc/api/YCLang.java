@@ -15,8 +15,8 @@ import java.util.Optional;
 
 public class YCLang extends Language {
 
-    List<CompilerTarget<Code, ?>> compilerTargets = new ArrayList();
-    List<InterpreterTarget<Code, ?>> interpreterTargets = new ArrayList();
+    List<CompilerTarget<Code, ?>> compilerTargets = new ArrayList<>();
+    List<InterpreterTarget<Code, ?>> interpreterTargets = new ArrayList<>();
 
     public YCLang(TaskFactory t) {
         this(t, new DefaultFormatterFactory());
