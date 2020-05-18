@@ -133,6 +133,15 @@ public class TypeTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
     }
 
     @Override
+    public void visit(YCTree.AssignExpr that) {
+        print(that, () -> {
+            printer.pushAttribute("evalType", that.evalType.toString());
+            printField("assignee", () -> that.assignee.accept(this));
+            printField("value", () -> that.value.accept(this));
+        });
+    }
+
+    @Override
     public void visit(YCTree.BinaryExpr that) {
         print(that, () -> {
             printer.pushAttribute("op", that.operator.toString());

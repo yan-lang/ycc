@@ -51,6 +51,12 @@ public abstract class AbstractNameFormatter implements Formatter<YCTree.Translat
     }
 
     @Override
+    public void visit(YCTree.AssignExpr that) {
+        that.assignee.accept(this);
+        that.value.accept(this);
+    }
+
+    @Override
     public void visit(YCTree.UnaryExpr that) {
         that.arg.accept(this);
     }

@@ -133,6 +133,14 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     }
 
     @Override
+    public void visit(YCTree.AssignExpr that) {
+        print(that, () -> {
+            printField("assignee", () -> that.assignee.accept(this));
+            printField("value", () -> that.value.accept(this));
+        });
+    }
+
+    @Override
     public void visit(YCTree.BinaryExpr that) {
         print(that, () -> {
             printer.pushAttribute("op", that.operator.toString());

@@ -323,7 +323,6 @@ public abstract class YCTree extends Tree {
             MULTI, DIV, ADD, MINUS,
             GT, GTE, LT, LTE,
             EQ, NEQ,
-            ASSIGN,
             LNOT, LAND, LOR;
         }
 
@@ -354,7 +353,6 @@ public abstract class YCTree extends Tree {
                 case YCTokens.LTE: return Tag.LTE;
                 case YCTokens.EQ: return Tag.EQ;
                 case YCTokens.NEQ: return Tag.NEQ;
-                case YCTokens.ASSIGN: return Tag.ASSIGN;
                 case YCTokens.LNOT: return Tag.LNOT;
                 case YCTokens.LAND: return Tag.LAND;
                 case YCTokens.LOR: return Tag.LOR;
@@ -379,6 +377,30 @@ public abstract class YCTree extends Tree {
 
         public OperatorExpr(Operator operator) {
             this.operator = operator;
+        }
+    }
+
+    /**
+     * 赋值表达式
+     */
+    public static class AssignExpr extends Expr {
+
+        public LHSExpr assignee;
+        public Expr value;
+
+        public AssignExpr(LHSExpr assignee, Expr value) {
+            this.assignee = assignee;
+            this.value = value;
+        }
+
+        @Override
+        public <R> R accept(Visitor<R> visitor) {
+            return visitor.visit(this);
+        }
+
+        @Override
+        public void accept(VoidVisitor visitor) {
+            visitor.visit(this);
         }
     }
 
@@ -499,10 +521,12 @@ public abstract class YCTree extends Tree {
 
     }
 
+    public abstract static class LHSExpr extends Expr {}
+
     /**
      * 标识符(Id -> Identifier)
      */
-    public static class Id extends Expr {
+    public static class Id extends LHSExpr {
         public String name;
 
         /**
@@ -614,6 +638,10 @@ public abstract class YCTree extends Tree {
             return setToken(new BreakStmt());
         }
 
+        public AssignExpr AssignExpr(LHSExpr assignee, Expr value) {
+            return setToken(new AssignExpr(assignee, value));
+        }
+
         public BinaryExpr BinaryExpr(Operator operator, Expr lhs, Expr rhs) {
             return setToken(new BinaryExpr(operator, lhs, rhs));
         }
@@ -663,6 +691,7 @@ public abstract class YCTree extends Tree {
         default void visit(EmptyStmt that)    { visitOthers(that); }
         default void visit(ContinueStmt that) { visitOthers(that); }
         default void visit(BreakStmt that)    { visitOthers(that); }
+        default void visit(AssignExpr that)   { visitOthers(that); }
         default void visit(BinaryExpr that)   { visitOthers(that); }
         default void visit(UnaryExpr that)    { visitOthers(that); }
         default void visit(TypeCastExpr that) { visitOthers(that); }
@@ -686,6 +715,7 @@ public abstract class YCTree extends Tree {
         default R visit(EmptyStmt that)    { return visitOthers(that); }
         default R visit(ContinueStmt that) { return visitOthers(that); }
         default R visit(BreakStmt that)    { return visitOthers(that); }
+        default R visit(AssignExpr that)   { return visitOthers(that); }
         default R visit(BinaryExpr that)   { return visitOthers(that); }
         default R visit(UnaryExpr that)    { return visitOthers(that); }
         default R visit(TypeCastExpr that) { return visitOthers(that); }
