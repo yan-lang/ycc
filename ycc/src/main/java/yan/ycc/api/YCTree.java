@@ -483,6 +483,10 @@ public abstract class YCTree extends Tree {
             this.args = args;
         }
 
+        public MethodSymbol getCalleeSymbol() {
+            return (MethodSymbol) funcID.symbol;
+        }
+
         @Override
         public <R> R accept(Visitor<R> visitor) { return visitor.visit(this); }
 
