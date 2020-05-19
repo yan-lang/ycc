@@ -6,6 +6,7 @@ add,         add,      +
 minus,       minus,    -
 multi,       multiply, *
 div,         divide,   //
+rem,         remainder, %
 gt,          greater than,          >
 gte,         greater than or equal, >/=
 lt,          less than,             <

@@ -320,7 +320,7 @@ public abstract class YCTree extends Tree {
 
     public static class Operator {
         public enum Tag {
-            MULTI, DIV, ADD, MINUS,
+            MULTI, DIV, ADD, MINUS, REM,
             GT, GTE, LT, LTE,
             EQ, NEQ,
             LNOT, LAND, LOR;
@@ -347,6 +347,7 @@ public abstract class YCTree extends Tree {
                 case YCTokens.DIV: return Tag.DIV;
                 case YCTokens.ADD: return Tag.ADD;
                 case YCTokens.MINUS: return Tag.MINUS;
+                case YCTokens.REM: return Tag.REM;
                 case YCTokens.GT: return Tag.GT;
                 case YCTokens.GTE: return Tag.GTE;
                 case YCTokens.LT: return Tag.LT;
