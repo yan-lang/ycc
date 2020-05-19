@@ -13,4 +13,24 @@ public class YCTypes {
     public static boolean isErrorType(Type type) {
         return type == Error;
     }
+
+    public static boolean isNumericType(Type type) {
+        return type == Int || type == Float;
+    }
+
+    public static boolean isBoolType(Type type) {
+        return type == Bool;
+    }
+
+    public static boolean isIntType(Type type) {
+        return type == Int;
+    }
+
+    public static boolean isFloatType(Type type) {
+        return type == Float;
+    }
+
+    public static boolean isVoidType(Type type) {
+        return type == Void;
+    }
 }
