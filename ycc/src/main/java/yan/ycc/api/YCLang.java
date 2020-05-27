@@ -61,9 +61,9 @@ public class YCLang extends Language {
     //===----------------------------------------------------------------------===//
 
     public interface TaskFactory extends CommonTaskFactory<YCTree.TranslationUnit> {
-        Optional<Phase<Code, Module>> emitIR(boolean isInterpreting);
+        default Optional<Phase<Code, Module>> emitIR(boolean isInterpreting) { return Optional.empty(); }
 
-        Optional<Phase<Code, Object>> interpret(boolean isInterpreting);
+        default Optional<Phase<Code, Object>> interpret(boolean isInterpreting) { return Optional.empty(); }
     }
 
     public interface FormatterFactory extends CommonFormatterFactory<YCTree.TranslationUnit> {
