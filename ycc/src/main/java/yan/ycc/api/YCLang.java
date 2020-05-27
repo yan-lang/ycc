@@ -60,7 +60,17 @@ public class YCLang extends Language {
     //       Factory interface for the implementation of this language
     //===----------------------------------------------------------------------===//
 
-    public interface TaskFactory extends CommonTaskFactory<YCTree.TranslationUnit> {
+    public interface TaskFactory {
+        default Optional<Phase<Code, List<Token>>> lex(boolean isInterpreting) { return Optional.empty(); }
+
+        default Optional<Phase<Code, YCTree.TranslationUnit>> parse(boolean isInterpreting) { return Optional.empty(); }
+
+        default Optional<Phase<Code, YCTree.TranslationUnit>> checkControlStructure(boolean isInterpreting) { return Optional.empty(); }
+
+        default Optional<Phase<Code, YCTree.TranslationUnit>> resolveName(boolean isInterpreting) { return Optional.empty(); }
+
+        default Optional<Phase<Code, YCTree.TranslationUnit>> checkType(boolean isInterpreting) { return Optional.empty(); }
+
         default Optional<Phase<Code, Module>> emitIR(boolean isInterpreting) { return Optional.empty(); }
 
         default Optional<Phase<Code, Object>> interpret(boolean isInterpreting) { return Optional.empty(); }
