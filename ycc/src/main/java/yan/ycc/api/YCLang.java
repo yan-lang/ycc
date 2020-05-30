@@ -35,9 +35,11 @@ public class YCLang extends Language {
         });
     }
 
+
     //===----------------------------------------------------------------------===//
     //                    Getter for language fields
     //===----------------------------------------------------------------------===//
+
 
     @Override
     public String version() { return "1.0"; }
@@ -56,9 +58,11 @@ public class YCLang extends Language {
         return this.interpreterTargets;
     }
 
+
     //===----------------------------------------------------------------------===//
     //       Factory interface for the implementation of this language
     //===----------------------------------------------------------------------===//
+
 
     public interface TaskFactory {
         default Optional<Phase<Code, List<Token>>> lex(boolean isInterpreting) { return Optional.empty(); }
@@ -84,9 +88,11 @@ public class YCLang extends Language {
 
     }
 
+
     //===----------------------------------------------------------------------===//
     //                    Helper for constructors
     //===----------------------------------------------------------------------===//
+
 
     protected void buildTargets(TaskFactory t, FormatterFactory f, boolean isInterpreting, BuildTargetAction action) {
         t.lex(isInterpreting).ifPresent((phase) -> {
