@@ -8,6 +8,7 @@ import yan.foundation.frontend.lex.formatter.SimpleTokenFormatter;
 import yan.foundation.frontend.lex.formatter.XMLTokenFormatter;
 import yan.foundation.ir.Module;
 import yan.ycc.api.formatter.*;
+import yan.ycc.api.phase.Interpreter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,10 @@ public class YCLang extends Language {
 
         default Optional<Phase<Code, Module>> emitIR(boolean isInterpreting) { return Optional.empty(); }
 
-        default Optional<Phase<Code, Object>> interpret(boolean isInterpreting) { return Optional.empty(); }
+        default Optional<Phase<Code, Object>> interpret(boolean isInterpreting) {
+            var phase = emitIR(isInterpreting);
+            return phase.map(codeModulePhase -> codeModulePhase.pipe(new Interpreter()));
+        }
     }
 
     public interface FormatterFactory extends CommonFormatterFactory<YCTree.TranslationUnit> {
