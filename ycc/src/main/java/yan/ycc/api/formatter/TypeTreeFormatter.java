@@ -35,8 +35,8 @@ public class TypeTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
 
     private <T extends Tree> void print(T node, boolean compactMode, TypeTreeFormatter.DetailPrinter detailPrinter) {
         printer.openElement(node.getClass().getSimpleName(), compactMode);
-        printer.pushAttribute("from", String.valueOf(node.range().from));
-        printer.pushAttribute("to", String.valueOf(node.range().to));
+//        printer.pushAttribute("from", String.valueOf(node.range().from));
+//        printer.pushAttribute("to", String.valueOf(node.range().to));
         if (detailPrinter != null) detailPrinter.print();
         printer.closeElement();
     }
@@ -50,8 +50,8 @@ public class TypeTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
     @Override
     public void visit(YCTree.TranslationUnit that) {
         printer.openElement("TranslationUnit");
-        printer.pushAttribute("from", String.valueOf(that.range().from));
-        printer.pushAttribute("to", String.valueOf(that.range().to));
+//        printer.pushAttribute("from", String.valueOf(that.range().from));
+//        printer.pushAttribute("to", String.valueOf(that.range().to));
 
         that.decls.forEach(decl -> decl.accept(this));
 
