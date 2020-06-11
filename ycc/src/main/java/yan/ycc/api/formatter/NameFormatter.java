@@ -41,7 +41,8 @@ public class NameFormatter extends AbstractNameFormatter {
         printer.pushSimpleElement("line", String.valueOf(that.start.line));
         printer.pushSimpleElement("type", "func");
         printer.pushSimpleElement("name", that.funcID.name);
-        printer.pushSimpleElement("refLine", String.valueOf(that.funcID.symbol.tree.start.line));
+        printer.pushSimpleElement("refLine", that.funcID.symbol.tree == null ? "null" :
+                String.valueOf(that.funcID.symbol.tree.start.line));
         printer.closeElement();
         that.args.forEach(arg -> arg.accept(this));
     }
