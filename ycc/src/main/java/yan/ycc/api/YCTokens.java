@@ -3,6 +3,9 @@ package yan.ycc.api;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * YCTokens包含YC语言所有可能出现的单词类型定义。
+ */
 public interface YCTokens {
     int UNKNOWN = 0;
 

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * YCLang是对YC语言编译器的抽象。
+ */
 public class YCLang extends Language {
 
     List<CompilerTarget<Code, ?>> compilerTargets = new ArrayList<>();
@@ -99,27 +102,13 @@ public class YCLang extends Language {
 
 
     protected void buildTargets(TaskFactory t, FormatterFactory f, boolean isInterpreting, BuildTargetAction action) {
-        t.lex(isInterpreting).ifPresent((phase) -> {
-            action.exec("lex", phase, f.lex(isInterpreting));
-        });
-        t.parse(isInterpreting).ifPresent((phase) -> {
-            action.exec("parse", phase, f.parse(isInterpreting));
-        });
-        t.checkControlStructure(isInterpreting).ifPresent((phase) -> {
-            action.exec("cs", phase, f.cs(isInterpreting));
-        });
-        t.resolveName(isInterpreting).ifPresent((phase) -> {
-            action.exec("name", phase, f.nameResolve(isInterpreting));
-        });
-        t.checkType(isInterpreting).ifPresent((phase) -> {
-            action.exec("type", phase, f.typeCheck(isInterpreting));
-        });
-        t.emitIR(isInterpreting).ifPresent((phase) -> {
-            action.exec("ir", phase, f.emitIR(isInterpreting));
-        });
-        t.interpret(isInterpreting).ifPresent((phase) -> {
-            action.exec("interpret", phase, f.interpret(isInterpreting));
-        });
+        t.lex(isInterpreting).ifPresent((phase) -> action.exec("lex", phase, f.lex(isInterpreting)));
+        t.parse(isInterpreting).ifPresent((phase) -> action.exec("parse", phase, f.parse(isInterpreting)));
+        t.checkControlStructure(isInterpreting).ifPresent((phase) -> action.exec("cs", phase, f.cs(isInterpreting)));
+        t.resolveName(isInterpreting).ifPresent((phase) -> action.exec("name", phase, f.nameResolve(isInterpreting)));
+        t.checkType(isInterpreting).ifPresent((phase) -> action.exec("type", phase, f.typeCheck(isInterpreting)));
+        t.emitIR(isInterpreting).ifPresent((phase) -> action.exec("ir", phase, f.emitIR(isInterpreting)));
+        t.interpret(isInterpreting).ifPresent((phase) -> action.exec("interpret", phase, f.interpret(isInterpreting)));
     }
 
     protected interface BuildTargetAction {

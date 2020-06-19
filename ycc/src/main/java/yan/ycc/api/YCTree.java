@@ -11,6 +11,9 @@ import yan.foundation.frontend.semantic.v1.symbol.VarSymbol;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * YCTree是所有YC语言语法树节点的基类。YCTree包含了众多嵌套类，这些类定义了YC语言的语法树结构。
+ */
 public abstract class YCTree extends Tree {
 
     public abstract <R> R accept(Visitor<R> visitor);
@@ -323,7 +326,7 @@ public abstract class YCTree extends Tree {
             MULTI, DIV, ADD, MINUS, REM,
             GT, GTE, LT, LTE,
             EQ, NEQ,
-            LNOT, LAND, LOR;
+            LNOT, LAND, LOR
         }
 
         public Tag tag;
