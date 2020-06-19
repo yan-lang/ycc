@@ -88,3 +88,15 @@ ReturnStmt  ::=  'return' Expression? ';'
 
 ## YC2
 
+数组文法如下:
+
+```BNF
+VarDecl ::= Type Id('[' INT_LIT ']')* ('=' Expr)* ';'
+LValue  ::= Id
+```
+
+新增For循环文法如下：
+
+```BNF
+`for` `(`VarDecl   `)`
+```

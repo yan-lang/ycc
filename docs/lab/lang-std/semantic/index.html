@@ -4,33 +4,33 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="语义说明 编写中  YC0 在 语言规范 一章中，我们已经说了，YC0的文法是C语言文法的一个子集，因此YC0程序也是C语言程序。本节主要阐述YC0语言相对于C语言的一些特殊规定。
-程序结构 一个YC0程序由数个声明（Declaration）构成，声明包括 函数声明 和 变量声明 。
+<meta name="description" content="语义说明 编写中  YC1 在语言规范一章中，我们已经说了，YC1的文法是C语言文法的一个子集，因此YC1程序也是C语言程序。本节主要阐述YC1语言相对于C语言的一些特殊规定。
+程序结构 一个YC1程序由数个声明（Declaration）构成，声明包括函数声明和变量声明。
 变量 还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。
-int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 float b = 3.14; // 定义一个名叫a的单精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC0中，我们对变量定义做了一些限制。
- YC0只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
-char a = &#39;c&#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 float d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC0只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
-YC0支持的表达式按优先级从高到低如下表所示:
-   语义 运算符 结合性 例子     括号 () 无 (a&#43;b)   函数调用 () 左结合 f(10)   相反数，类型转换 - (type) 右结合 -10, (int)3."><meta property="og:title" content="语义说明" />
-<meta property="og:description" content="语义说明 编写中  YC0 在 语言规范 一章中，我们已经说了，YC0的文法是C语言文法的一个子集，因此YC0程序也是C语言程序。本节主要阐述YC0语言相对于C语言的一些特殊规定。
-程序结构 一个YC0程序由数个声明（Declaration）构成，声明包括 函数声明 和 变量声明 。
+int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 double b = 3.14; // 定义一个名叫a的双精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC1中，我们对变量定义做了一些限制。
+ YC1只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
+char a = &#39;c&#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 double d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC1只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
+YC1支持的表达式按优先级从高到低如下表所示:
+   语义 运算符 结合性 例子     括号 () 无 (a&#43;b)   函数调用 () 左结合 f(10)   相反数,类型转换, 取反 - (type) !"><meta property="og:title" content="语义说明" />
+<meta property="og:description" content="语义说明 编写中  YC1 在语言规范一章中，我们已经说了，YC1的文法是C语言文法的一个子集，因此YC1程序也是C语言程序。本节主要阐述YC1语言相对于C语言的一些特殊规定。
+程序结构 一个YC1程序由数个声明（Declaration）构成，声明包括函数声明和变量声明。
 变量 还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。
-int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 float b = 3.14; // 定义一个名叫a的单精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC0中，我们对变量定义做了一些限制。
- YC0只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
-char a = &#39;c&#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 float d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC0只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
-YC0支持的表达式按优先级从高到低如下表所示:
-   语义 运算符 结合性 例子     括号 () 无 (a&#43;b)   函数调用 () 左结合 f(10)   相反数，类型转换 - (type) 右结合 -10, (int)3." />
+int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 double b = 3.14; // 定义一个名叫a的双精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC1中，我们对变量定义做了一些限制。
+ YC1只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
+char a = &#39;c&#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 double d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC1只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
+YC1支持的表达式按优先级从高到低如下表所示:
+   语义 运算符 结合性 例子     括号 () 无 (a&#43;b)   函数调用 () 左结合 f(10)   相反数,类型转换, 取反 - (type) !" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yan-lang.github.io/ycc/lab/lang-std/semantic/" />
-<meta property="article:modified_time" content="2020-03-22T17:15:32+08:00" />
+<meta property="article:modified_time" content="2020-04-28T19:09:27+08:00" />
 <title>语义说明 | YCC实验 - 2020</title>
 <link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
 <!--
 Made with Book Theme
@@ -125,26 +125,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
+        <li>
 
   
-  <a href="/ycc/lab/summary/" class="collapsed ">实验综述</a>
+  <a href="/ycc/lab/summary/" class="">实验综述</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+</li>
       
     
       
@@ -214,26 +201,6 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/ycc/lab/lang-std/semantic/" class="active">语义说明</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/cheatsheet/" class="">特性汇总</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/new-features/" class="">新特性提案</a>
   
 
 </li>
@@ -431,7 +398,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#语义说明">语义说明</a>
       <ul>
-        <li><a href="#yc0">YC0</a>
+        <li><a href="#yc1">YC1</a>
           <ul>
             <li><a href="#程序结构">程序结构</a></li>
             <li><a href="#变量">变量</a></li>
@@ -441,7 +408,12 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#函数">函数</a></li>
           </ul>
         </li>
-        <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a>
+          <ul>
+            <li><a href="#数组">数组</a></li>
+            <li><a href="#for循环">For循环</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -460,34 +432,28 @@ https://github.com/alex-shpak/hugo-book
   编写中
 </blockquote>
 
-<h2 id="yc0">YC0</h2>
-<p>在
-  <a href="/ycc/lab/lang-std/">语言规范</a>
-一章中，我们已经说了，YC0的文法是C语言文法的一个子集，因此YC0程序也是C语言程序。本节主要阐述YC0语言相对于C语言的一些特殊规定。</p>
+<h2 id="yc1">YC1</h2>
+<p>在<a href="/ycc/lab/lang-std/">语言规范</a>一章中，我们已经说了，YC1的文法是C语言文法的一个子集，因此YC1程序也是C语言程序。本节主要阐述YC1语言相对于C语言的一些特殊规定。</p>
 <h3 id="程序结构">程序结构</h3>
-<p>一个YC0程序由数个声明（Declaration）构成，声明包括
-  <a href="#函数">函数声明</a>
-和
-  <a href="#变量">变量声明</a>
-。</p>
+<p>一个YC1程序由数个声明（Declaration）构成，声明包括<a href="#函数">函数声明</a>和<a href="#变量">变量声明</a>。</p>
 <h3 id="变量">变量</h3>
 <p>还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">int</span> <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>      <span style="color:#75715e">// 定义一个名叫a的整型变量，并赋初值为10
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">float</span> <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span><span style="color:#111">;</span>  <span style="color:#75715e">// 定义一个名叫a的单精度浮点型变量，并赋初值为3.14
-</span></code></pre></div><p>但是，为了简单请见，在YC0中，<strong>我们对变量定义做了一些限制</strong>。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">int</span> <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10</span>;      <span style="color:#177500">// 定义一个名叫a的整型变量，并赋初值为10
+</span><span style="color:#177500"></span><span style="color:#a90d91">double</span> <span style="color:#000">b</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3.14</span>;  <span style="color:#177500">// 定义一个名叫a的双精度浮点型变量，并赋初值为3.14
+</span></code></pre></div><p>但是，为了简单请见，在YC1中，<strong>我们对变量定义做了一些限制</strong>。</p>
 <ol>
-<li>YC0只支持有限的3种数据类型，分别是<code>int</code>, <code>float</code>, <code>void</code>,（void只能作为函数返回值的类型）。</li>
+<li>YC1只支持有限的3种数据类型，分别是<code>int</code>, <code>float</code>, <code>void</code>,（void只能作为函数返回值的类型）。</li>
 <li>所有变量必须在定义的时候初始化。</li>
 <li>一次只能定义一个变量。</li>
 </ol>
 <p>关于上述要求，以下是几个例子:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">char</span> <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;c&#39;</span>       <span style="color:#75715e">// 不合法: 不支持char类型
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span>        <span style="color:#75715e">// 合法
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#111">c</span><span style="color:#111">;</span>             <span style="color:#75715e">// 不合法: 变量必须在定义的时候初始化
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">float</span> <span style="color:#111">d</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span><span style="color:#111">,</span> <span style="color:#111">e</span><span style="color:#f92672">=</span><span style="color:#ae81ff">9</span><span style="color:#111">;</span>   <span style="color:#75715e">// 不合法: 一次只能定义一个变量
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">char</span> <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#2300ce">&#39;c&#39;</span>       <span style="color:#177500">// 不合法: 不支持char类型
+</span><span style="color:#177500"></span><span style="color:#a90d91">int</span> <span style="color:#000">b</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10</span>;        <span style="color:#177500">// 合法
+</span><span style="color:#177500"></span><span style="color:#a90d91">int</span> <span style="color:#000">c</span>;             <span style="color:#177500">// 不合法: 变量必须在定义的时候初始化
+</span><span style="color:#177500"></span><span style="color:#a90d91">double</span> <span style="color:#000">d</span><span style="color:#000">=</span><span style="color:#1c01ce">10</span>, <span style="color:#000">e</span><span style="color:#000">=</span><span style="color:#1c01ce">9</span>;   <span style="color:#177500">// 不合法: 一次只能定义一个变量
 </span></code></pre></div><h3 id="表达式">表达式</h3>
-<p>诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC0只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。</p>
-<p>YC0支持的表达式按优先级从高到低如下表所示:</p>
+<p>诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC1只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。</p>
+<p>YC1支持的表达式按优先级从高到低如下表所示:</p>
 <table>
 <thead>
 <tr>
@@ -511,10 +477,10 @@ https://github.com/alex-shpak/hugo-book
 <td>f(10)</td>
 </tr>
 <tr>
-<td>相反数，类型转换</td>
-<td><code>-</code> <code>(type)</code></td>
+<td>相反数,类型转换, 取反</td>
+<td><code>-</code> <code>(type)</code> <code>!</code></td>
 <td>右结合</td>
-<td>-10, (int)3.14</td>
+<td>-10, (int)3.14, !(a&gt;b)</td>
 </tr>
 <tr>
 <td>乘除</td>
@@ -541,6 +507,18 @@ https://github.com/alex-shpak/hugo-book
 <td>a==b, a!=b</td>
 </tr>
 <tr>
+<td>关系与</td>
+<td><code>&amp;&amp;</code></td>
+<td>左结合</td>
+<td>a&gt;0&amp;&amp;b&gt;0</td>
+</tr>
+<tr>
+<td>关系或</td>
+<td><code>||</code></td>
+<td>左结合</td>
+<td>a&gt;0</td>
+</tr>
+<tr>
 <td>赋值</td>
 <td><code>=</code></td>
 <td>右结合</td>
@@ -549,32 +527,32 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 <h3 id="分支">分支</h3>
-<p>YC0只支持<code>if</code>分支语句，不支持<code>switch</code>和<code>goto</code>。</p>
+<p>YC1只支持<code>if</code>分支语句，不支持<code>switch</code>和<code>goto</code>。</p>
 <ol>
-<li>每个<code>if</code>语句，可能包含一个<code>else</code>语句，但YC0不支持<code>else if</code>语句。</li>
+<li>每个<code>if</code>语句，可能包含一个<code>else</code>语句，但YC1不支持<code>else if</code>语句。</li>
 <li><code>if</code>或<code>else</code>里的内容必须使用大括号包裹，即使里面只有一个语句。</li>
 </ol>
 <div class="book-columns flex flex-wrap">
   
   <div class="flex-even markdown-inner">
     <p>合法例子:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">}</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">if</span>(<span style="color:#000">a</span><span style="color:#000">&lt;</span><span style="color:#1c01ce">0</span>) { <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#000">a</span><span style="color:#000">+</span><span style="color:#1c01ce">1</span>; }
 
-<span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
-<span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
-    <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">b</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
+<span style="color:#a90d91">if</span>(<span style="color:#000">a</span><span style="color:#000">&lt;</span><span style="color:#1c01ce">0</span>) {
+    <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#000">a</span><span style="color:#000">+</span><span style="color:#1c01ce">1</span>;
+} <span style="color:#a90d91">else</span> {
+    <span style="color:#000">b</span> <span style="color:#000">=</span> <span style="color:#000">b</span><span style="color:#000">-</span><span style="color:#1c01ce">1</span>;
+}
 </code></pre></div>
   </div>
   
   <div class="flex-even markdown-inner">
     <p>不合法例子:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">==</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#111">a</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">}</span>
-<span style="color:#00a8c8">else</span> <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">==</span><span style="color:#ae81ff">3</span><span style="color:#111">)</span> <span style="color:#111">{</span> <span style="color:#111">a</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span><span style="color:#111">;</span> <span style="color:#111">}</span>  <span style="color:#75715e">// 不支持else if
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 即使只有一个语句也必须使用大括号
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">==</span><span style="color:#ae81ff">4</span><span style="color:#111">)</span> <span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#111">;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">if</span>(<span style="color:#000">a</span><span style="color:#000">==</span><span style="color:#1c01ce">2</span>) { <span style="color:#000">a</span><span style="color:#000">=</span><span style="color:#1c01ce">1</span>; }
+<span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span>(<span style="color:#000">a</span><span style="color:#000">==</span><span style="color:#1c01ce">3</span>) { <span style="color:#000">a</span><span style="color:#000">=</span><span style="color:#1c01ce">3</span>; }  <span style="color:#177500">// 不支持else if
+</span><span style="color:#177500"></span>
+<span style="color:#177500">// 即使只有一个语句也必须使用大括号
+</span><span style="color:#177500"></span><span style="color:#a90d91">if</span>(<span style="color:#000">a</span><span style="color:#000">==</span><span style="color:#1c01ce">4</span>) <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
 
 
 </code></pre></div>
@@ -583,12 +561,12 @@ https://github.com/alex-shpak/hugo-book
 </div>
 
 <h3 id="循环">循环</h3>
-<p>YC0只支持<code>while</code>循环，<code>for</code>和<code>do while</code>循环为后续版本的扩展内容。</p>
+<p>YC1只支持<code>while</code>循环，<code>for</code>和<code>do while</code>循环为后续版本的扩展内容。</p>
 <ul>
 <li>与<code>if</code>一样, <code>while</code>循环的循环体必须使用大括号包裹，即使里面只有一条语句。</li>
 </ul>
 <h3 id="函数">函数</h3>
-<p>YC0支持函数，但是与C语言不同的是，YC0不能只定义函数声明而不实现，函数调用只能通过<code>f(1,2,3)</code>的形式调用，不能通过函数指针。</p>
+<p>YC1支持函数，但是与C语言不同的是，YC1不能只定义函数声明而不实现，函数调用只能通过<code>f(1,2,3)</code>的形式调用，不能通过函数指针。</p>
 <div class="book-expand">
   <label>
     <div class="book-expand-head flex justify-between">
@@ -598,24 +576,26 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       <p>在c语言中下面的语句是合法的, 函数声明只有函数签名而没有函数体。</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">int</span> <span style="color:#75af00">add</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">int</span> <span style="color:#75af00">add</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span><span style="color:#111">);</span>    <span style="color:#75715e">// 你甚至可以不写形参的名字
-</span></code></pre></div><p>上述语法在YC0中是<strong>不允许</strong>的。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">int</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>);
+<span style="color:#a90d91">int</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span>, <span style="color:#a90d91">int</span>);    <span style="color:#177500">// 你甚至可以不写形参的名字
+</span></code></pre></div><p>上述语法在YC1中是<strong>不允许</strong>的。</p>
 
     </div>
   </label>
 </div>
 
 <p>以下是一个合法的函数定义和调用。</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">int</span> <span style="color:#75af00">add</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">y</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
-<span style="color:#75715e">// 与C类似, 你必须定义一个名叫main的主函数作为程序入口
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">int</span> <span style="color:#111">c</span> <span style="color:#f92672">=</span> <span style="color:#111">add</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">);</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
-</code></pre></div><h2 id="yc1">YC1</h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">int</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>) {
+    <span style="color:#a90d91">return</span> <span style="color:#000">x</span><span style="color:#000">+</span><span style="color:#000">y</span>;
+}
+<span style="color:#177500">// 与C类似, 你必须定义一个名叫main的主函数作为程序入口
+</span><span style="color:#177500"></span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>() {
+    <span style="color:#a90d91">int</span> <span style="color:#000">c</span> <span style="color:#000">=</span> <span style="color:#000">add</span>(<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">2</span>);
+    <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+}
+</code></pre></div><h2 id="yc2">YC2</h2>
+<h3 id="数组">数组</h3>
+<h3 id="for循环">For循环</h3>
 </article>
  
       
@@ -628,9 +608,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/9e6761f349cee8c0d5071ad5c629f26a4f5b6b80" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/c6153549533e77b60504be340055d751a0c74d9f" title='最后修改者 Zeqiang-Lai | Apr 28, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 22, 2020</span>
+      <span>Apr 28, 2020</span>
     </a>
   </div>
 
@@ -666,7 +646,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#语义说明">语义说明</a>
       <ul>
-        <li><a href="#yc0">YC0</a>
+        <li><a href="#yc1">YC1</a>
           <ul>
             <li><a href="#程序结构">程序结构</a></li>
             <li><a href="#变量">变量</a></li>
@@ -676,7 +656,12 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#函数">函数</a></li>
           </ul>
         </li>
-        <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a>
+          <ul>
+            <li><a href="#数组">数组</a></li>
+            <li><a href="#for循环">For循环</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

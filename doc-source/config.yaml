@@ -20,7 +20,7 @@ markup:
     startLevel: 1
   highlight:
     guessSyntax: true
-    style: monokailight
+    style: xcode
     tabWidth: 4
 
 # Multi-lingual mode config

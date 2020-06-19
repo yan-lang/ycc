@@ -4,21 +4,38 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="实验综述 "><meta property="og:title" content="实验综述" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
+<meta name="description" content="实验综述 在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。
+评分标准    实验名称 分数 迟交扣分     Lab1: 词法分析 25 5分/天   Lab2: 语法分析 25 5/天   Lab3: 语义分析 25 3/天   Lab4: 中间代码生成 25 3/天    提交方法 请将的你程序打包成jar包。
+请通过我们的自动评测网站提交你的实现。
+学术诚信声明 我们将严格执行学校的学术诚信政策和程序。
+本课程的所有实验必须由一名学生自行完成。这项工作必须是你自己的。不要从任何人那里复制实验的任何部分。不要看其他学生的代码。不要让任何人可以使用你的部分代码，并确保没有其他人可以读取你的文件。
+您的代码中可以使用通用库，如SML基本库、SML/NJ库或其他公共可用库。这也包括教科书提供的代码。请明确标识您是否使用了库代码，确认其来源，并总结您可能对库所做的任何更改。其他学生本学期或上学期编写编译器是明确禁止使用的。如有疑问，请联系导师。
+本课程的所有作业都是单人作业。这工作一定是你自己做的。不要抄袭任何人的作业的任何部分。不要看其他学生的试卷。不要让任何人知道你的作业的任何部分，并且确保没有人可以阅读你的文件。
+我们将使用Moss系统来检测抄袭行为。
+在实验室、作业或教科书中澄清模糊点，或在使用计算机系统、编译器、调试器、分析器或其他工具时提供帮助或接受帮助，都不被视为作弊。
+ "><meta property="og:title" content="实验综述" />
+<meta property="og:description" content="实验综述 在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。
+评分标准    实验名称 分数 迟交扣分     Lab1: 词法分析 25 5分/天   Lab2: 语法分析 25 5/天   Lab3: 语义分析 25 3/天   Lab4: 中间代码生成 25 3/天    提交方法 请将的你程序打包成jar包。
+请通过我们的自动评测网站提交你的实现。
+学术诚信声明 我们将严格执行学校的学术诚信政策和程序。
+本课程的所有实验必须由一名学生自行完成。这项工作必须是你自己的。不要从任何人那里复制实验的任何部分。不要看其他学生的代码。不要让任何人可以使用你的部分代码，并确保没有其他人可以读取你的文件。
+您的代码中可以使用通用库，如SML基本库、SML/NJ库或其他公共可用库。这也包括教科书提供的代码。请明确标识您是否使用了库代码，确认其来源，并总结您可能对库所做的任何更改。其他学生本学期或上学期编写编译器是明确禁止使用的。如有疑问，请联系导师。
+本课程的所有作业都是单人作业。这工作一定是你自己做的。不要抄袭任何人的作业的任何部分。不要看其他学生的试卷。不要让任何人知道你的作业的任何部分，并且确保没有人可以阅读你的文件。
+我们将使用Moss系统来检测抄袭行为。
+在实验室、作业或教科书中澄清模糊点，或在使用计算机系统、编译器、调试器、分析器或其他工具时提供帮助或接受帮助，都不被视为作弊。
+ " />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://yan-lang.github.io/ycc/lab/summary/" />
-
+<meta property="article:modified_time" content="2020-05-17T10:55:12+08:00" />
 <title>实验综述 | YCC实验 - 2020</title>
 <link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://yan-lang.github.io/ycc/lab/summary/index.xml" title="YCC实验 - 2020" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -112,62 +129,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
-
-  
-  <a href="/ycc/lab/summary/" class="collapsed active">实验综述</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
         <li>
 
   
-  <a href="/ycc/lab/summary/submit/" class="">提交方法</a>
+  <a href="/ycc/lab/summary/" class="active">实验综述</a>
   
 
 </li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/summary/grade-policy/" class="">评分标准</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/summary/honor-code/" class="">学术诚信声明</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
       
     
       
@@ -396,7 +364,13 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#实验综述">实验综述</a></li>
+    <li><a href="#实验综述">实验综述</a>
+      <ul>
+        <li><a href="#评分标准">评分标准</a></li>
+        <li><a href="#提交方法">提交方法</a></li>
+        <li><a href="#学术诚信声明">学术诚信声明</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -409,6 +383,53 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="实验综述">实验综述</h1>
+<p>在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。</p>
+<h2 id="评分标准">评分标准</h2>
+<table>
+<thead>
+<tr>
+<th>实验名称</th>
+<th>分数</th>
+<th>迟交扣分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/ycc/lab/note/lab1/">Lab1: 词法分析</a></td>
+<td>25</td>
+<td>5分/天</td>
+</tr>
+<tr>
+<td><a href="/ycc/lab/note/lab2/">Lab2: 语法分析</a></td>
+<td>25</td>
+<td>5/天</td>
+</tr>
+<tr>
+<td><a href="">Lab3: 语义分析</a></td>
+<td>25</td>
+<td>3/天</td>
+</tr>
+<tr>
+<td><a href="">Lab4: 中间代码生成</a></td>
+<td>25</td>
+<td>3/天</td>
+</tr>
+</tbody>
+</table>
+<h2 id="提交方法">提交方法</h2>
+<p>请将的你程序打包成jar包。</p>
+<p>请通过我们的自动评测网站提交你的实现。</p>
+<h2 id="学术诚信声明">学术诚信声明</h2>
+<blockquote class="book-hint danger">
+  <p>我们将严格执行学校的学术诚信政策和程序。</p>
+<p>本课程的所有实验必须由一名学生自行完成。这项工作必须是你自己的。不要从任何人那里复制实验的任何部分。不要看其他学生的代码。不要让任何人可以使用你的部分代码，并确保没有其他人可以读取你的文件。</p>
+<p>您的代码中可以使用通用库，如SML基本库、SML/NJ库或其他公共可用库。这也包括教科书提供的代码。请明确标识您是否使用了库代码，确认其来源，并总结您可能对库所做的任何更改。其他学生本学期或上学期编写编译器是明确禁止使用的。如有疑问，请联系导师。</p>
+<p>本课程的所有作业都是单人作业。这工作一定是你自己做的。不要抄袭任何人的作业的任何部分。不要看其他学生的试卷。不要让任何人知道你的作业的任何部分，并且确保没有人可以阅读你的文件。</p>
+<p>我们将使用Moss系统来检测抄袭行为。</p>
+<p>在实验室、作业或教科书中澄清模糊点，或在使用计算机系统、编译器、调试器、分析器或其他工具时提供帮助或接受帮助，都不被视为作弊。</p>
+
+</blockquote>
+
 </article>
  
       
@@ -421,9 +442,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/a3a4503d1595caad306631621de201125857e207" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/9e64ff308ac6dfda8fbf87c1ebfe88eeff57393a" title='最后修改者 Zeqiang-Lai | May 17, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 22, 2020</span>
+      <span>May 17, 2020</span>
     </a>
   </div>
 
@@ -457,7 +478,13 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#实验综述">实验综述</a></li>
+    <li><a href="#实验综述">实验综述</a>
+      <ul>
+        <li><a href="#评分标准">评分标准</a></li>
+        <li><a href="#提交方法">提交方法</a></li>
+        <li><a href="#学术诚信声明">学术诚信声明</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

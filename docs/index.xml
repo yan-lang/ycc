@@ -15,8 +15,25 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/note/lab1/</guid>
-      <description>Caput vino delphine in tamen vias Cognita laeva illo fracta Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter , per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum .
- Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
+      <description>实验1 词法分析   Related files   test.c  (0 ko)    </description>
+    </item>
+    
+    <item>
+      <title>实验综述</title>
+      <link>https://yan-lang.github.io/ycc/lab/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yan-lang.github.io/ycc/lab/summary/</guid>
+      <description>实验综述 在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。
+评分标准    实验名称 分数 迟交扣分     Lab1: 词法分析 25 5分/天   Lab2: 语法分析 25 5/天   Lab3: 语义分析 25 3/天   Lab4: 中间代码生成 25 3/天    提交方法 请将的你程序打包成jar包。
+请通过我们的自动评测网站提交你的实现。
+学术诚信声明 我们将严格执行学校的学术诚信政策和程序。
+本课程的所有实验必须由一名学生自行完成。这项工作必须是你自己的。不要从任何人那里复制实验的任何部分。不要看其他学生的代码。不要让任何人可以使用你的部分代码，并确保没有其他人可以读取你的文件。
+您的代码中可以使用通用库，如SML基本库、SML/NJ库或其他公共可用库。这也包括教科书提供的代码。请明确标识您是否使用了库代码，确认其来源，并总结您可能对库所做的任何更改。其他学生本学期或上学期编写编译器是明确禁止使用的。如有疑问，请联系导师。
+本课程的所有作业都是单人作业。这工作一定是你自己做的。不要抄袭任何人的作业的任何部分。不要看其他学生的试卷。不要让任何人知道你的作业的任何部分，并且确保没有人可以阅读你的文件。
+我们将使用Moss系统来检测抄袭行为。
+在实验室、作业或教科书中澄清模糊点，或在使用计算机系统、编译器、调试器、分析器或其他工具时提供帮助或接受帮助，都不被视为作弊。
+ </description>
     </item>
     
     <item>
@@ -25,16 +42,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/other/faq/</guid>
-      <description>常见问题 </description>
-    </item>
-    
-    <item>
-      <title>提交方法</title>
-      <link>https://yan-lang.github.io/ycc/lab/summary/submit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yan-lang.github.io/ycc/lab/summary/submit/</guid>
-      <description>提交方法 待编写  </description>
+      <description>常见问题 不支持发行版本5</description>
     </item>
     
     <item>
@@ -43,8 +51,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/lexical/</guid>
-      <description>词法规范 待编写  YC0 以下是YC0的词法规则，使用正则表达式表示。
-   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT 0|[1-9][0-9]*   FLOAT_LIT (0|[1-9][0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD + KW_INT int LPAREN (   MINUS - KW_FLOAT float RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &amp;gt; KW_ELSE else COLUMN ;   GTE &amp;gt;= KW_WHILE while COMMA ,   LT &amp;lt; KW_CONTINUE continue     LTE &amp;lt;= KW_BREAK break     EQ == KW_RETURN return     NEQ !</description>
+      <description>词法规范 待编写  YC1 以下是YC1的词法规则，使用正则表达式表示。
+   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT (0|[1-9])[0-9]*   FLOAT_LIT ((0|[1-9])[0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD + KW_INT int LPAREN (   MINUS - KW_DOUBLE double RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &amp;gt; KW_ELSE else SEMICOLON ;   GTE &amp;gt;= KW_WHILE while COMMA ,   LT &amp;lt; KW_CONTINUE continue REL_AND &amp;amp;&amp;amp;   LTE &amp;lt;= KW_BREAK break REL_OR ||   EQ == KW_RETURN return REL_NOT !</description>
     </item>
     
     <item>
@@ -54,7 +62,7 @@
       
       <guid>https://yan-lang.github.io/ycc/other/reference/</guid>
       <description>参考资料 这里是你可以参考的相似项目和相关资料，欢迎补充。
-课程实验  伯克利的 CS164: Programming Languages and Compilers, Spring 2019  斯坦福的 CS143: Compilers  CMU的 15-411 Compiler Design  清华的 Decaf   开源编译器&amp;amp;解释器   wenyan : 文言文编程  Wren   Pony   SmallerC   8cc   ShivyC   xcc   wgtcc   电子书   Lox解释器及其配套电子书  源码: https://github.com/munificent/craftinginterpreters    Introduction to Compilers and Language Design  配套代码: https://github.</description>
+课程实验  伯克利的CS164: Programming Languages and Compilers, Spring 2019 斯坦福的CS143: Compilers CMU的15-411 Compiler Design 清华的Decaf  开源编译器&amp;amp;解释器  wenyan: 文言文编程 Wren Pony SmallerC 8cc ShivyC: Python实现的C语言编译器。 xcc wgtcc: C++实现的C语言编译器, 代码写的不错。 Enkel: 基于Java, Antlr的语言，编译成Java字节码，有文字教程。 c4: C语言实现的C编译器，非常精简, 只有四个函数, 支持自举。 xc: 修改自C4, 提供中文教程。 finch: 自制的动态语言, 使用C++编写  电子书  Lox解释器及其配套电子书  源码: https://github.com/munificent/craftinginterpreters   Introduction to Compilers and Language Design  配套代码: https://github.com/dthain/compilerbook-examples   A small demonstration how to use ANTLR 4&amp;rsquo;s visitor feature.</description>
     </item>
     
     <item>
@@ -63,17 +71,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/note/lab2/</guid>
-      <description>At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
-Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
-    </item>
-    
-    <item>
-      <title>评分标准</title>
-      <link>https://yan-lang.github.io/ycc/lab/summary/grade-policy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yan-lang.github.io/ycc/lab/summary/grade-policy/</guid>
-      <description>评分标准 待编写  </description>
+      <description>实验2 语法分析  Get Home  Contribute  </description>
     </item>
     
     <item>
@@ -83,20 +81,11 @@ Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt d
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/grammar/</guid>
       <description>语法规范 编写中  我们使用扩展BNF范式描述我们的文法。
- 以下内容修改自 Decaf语言规范 。
+ 以下内容修改自Decaf语言规范。
  * 表示一个符号出现任意多次，包括零次 + 表示一个符号出现至少一次 ? 表示一个符号可选，即至多出现一次 | 分隔多个产生式右部，无顺序 ε 表示空，即不存在任何符号  所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。
- YC0 终结符的词法规则见 词法规范 | YC0 。
-为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看 语义说明 | YC0 。
+ YC1 终结符的词法规则见词法规范 | YC1。
+为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看语义说明 | YC1。
 /* 程序结构 */ Program ::= Decl* Decl ::= VarDecl | FuncDecl Block ::= Stmt* Stmt ::= VarDecl | ExprStmt | IfStmt | WhileStmt | ReturnStmt | EmptyStmt EmptyStmt ::= &amp;#39;;&amp;#39; /* 变量 */ VarDecl ::= Type Id &amp;#39;=&amp;#39; Expr &amp;#39;;&amp;#39; Type ::= &amp;#39;int&amp;#39; | &amp;#39;float&amp;#39; | &amp;#39;void&amp;#39; /* 表达式 */ Expr ::= &amp;#39;(&amp;#39; Expr &amp;#39;)&amp;#39; // 括号表达式 | Literal // 常量, 如1.</description>
-    </item>
-    
-    <item>
-      <title>学术诚信声明</title>
-      <link>https://yan-lang.github.io/ycc/lab/summary/honor-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yan-lang.github.io/ycc/lab/summary/honor-code/</guid>
-      <description>学术诚信声明 待编写  </description>
     </item>
     
     <item>
@@ -105,14 +94,14 @@ Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/semantic/</guid>
-      <description>语义说明 编写中  YC0 在 语言规范 一章中，我们已经说了，YC0的文法是C语言文法的一个子集，因此YC0程序也是C语言程序。本节主要阐述YC0语言相对于C语言的一些特殊规定。
-程序结构 一个YC0程序由数个声明（Declaration）构成，声明包括 函数声明 和 变量声明 。
+      <description>语义说明 编写中  YC1 在语言规范一章中，我们已经说了，YC1的文法是C语言文法的一个子集，因此YC1程序也是C语言程序。本节主要阐述YC1语言相对于C语言的一些特殊规定。
+程序结构 一个YC1程序由数个声明（Declaration）构成，声明包括函数声明和变量声明。
 变量 还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。
-int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 float b = 3.14; // 定义一个名叫a的单精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC0中，我们对变量定义做了一些限制。
- YC0只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
-char a = &amp;#39;c&amp;#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 float d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC0只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
-YC0支持的表达式按优先级从高到低如下表所示:
-   语义 运算符 结合性 例子     括号 () 无 (a+b)   函数调用 () 左结合 f(10)   相反数，类型转换 - (type) 右结合 -10, (int)3.</description>
+int a = 10; // 定义一个名叫a的整型变量，并赋初值为10 double b = 3.14; // 定义一个名叫a的双精度浮点型变量，并赋初值为3.14 但是，为了简单请见，在YC1中，我们对变量定义做了一些限制。
+ YC1只支持有限的3种数据类型，分别是int, float, void,（void只能作为函数返回值的类型）。 所有变量必须在定义的时候初始化。 一次只能定义一个变量。  关于上述要求，以下是几个例子:
+char a = &amp;#39;c&amp;#39; // 不合法: 不支持char类型 int b = 10; // 合法 int c; // 不合法: 变量必须在定义的时候初始化 double d=10, e=9; // 不合法: 一次只能定义一个变量 表达式 诸如加减乘除，比较大小等运算的语句都被称为表达式。C语言支持相当多的表达式，如算术表达式，比较表达式，甚至位运算表达式，但是为了简便请见，YC1只支持部分基础的表达式，其他表达式将作为后续版本的扩展内容。
+YC1支持的表达式按优先级从高到低如下表所示:
+   语义 运算符 结合性 例子     括号 () 无 (a+b)   函数调用 () 左结合 f(10)   相反数,类型转换, 取反 - (type) !</description>
     </item>
     
     <item>
@@ -132,7 +121,7 @@ YC0支持的表达式按优先级从高到低如下表所示:
       <guid>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</guid>
       <description>新特性提案 此页面还在撰写中&amp;hellip;  这个页面包含了可能会添加进下一个版本中的语言新特性。
 新特性池  struct 字符串  开发周期 为了保证学生能够较好的完成实验，我们对添加进入YC语言的特性十分的谨慎。这也是为什么我们采用多个版本迭代的方式进行语言特性的选取与开发。
-一般来说，所有学生只被要求实现YC语言前几个版本的特性（现在是YC0），学有余力的同学可以选择继续实现后面的版本。随着版本不断的更新，以后实验可能转向由我们提供编译器的基础实现（YC0），然后由学生实现新特性（YC1～YCn） -&amp;gt; 待定。
+一般来说，所有学生只被要求实现YC语言前几个版本的特性（现在是YC1），学有余力的同学可以选择继续实现后面的版本。随着版本不断的更新，以后实验可能转向由我们提供编译器的基础实现（YC1），然后由学生实现新特性（YC1～YCn） -&amp;gt; 待定。
 开发周期按学年进行，基本流程如下：
   特性征集：根据学生，开发组提议内容形成一个新特性池。
   选取特性：周期初由所有开发组成员从新特性池中选取数个新特性。

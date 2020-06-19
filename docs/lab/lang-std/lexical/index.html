@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="词法规范 待编写  YC0 以下是YC0的词法规则，使用正则表达式表示。
-   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT 0|[1-9][0-9]*   FLOAT_LIT (0|[1-9][0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD &#43; KW_INT int LPAREN (   MINUS - KW_FLOAT float RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &gt; KW_ELSE else COLUMN ;   GTE &gt;= KW_WHILE while COMMA ,   LT &lt; KW_CONTINUE continue     LTE &lt;= KW_BREAK break     EQ == KW_RETURN return     NEQ !"><meta property="og:title" content="词法规范" />
-<meta property="og:description" content="词法规范 待编写  YC0 以下是YC0的词法规则，使用正则表达式表示。
-   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT 0|[1-9][0-9]*   FLOAT_LIT (0|[1-9][0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD &#43; KW_INT int LPAREN (   MINUS - KW_FLOAT float RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &gt; KW_ELSE else COLUMN ;   GTE &gt;= KW_WHILE while COMMA ,   LT &lt; KW_CONTINUE continue     LTE &lt;= KW_BREAK break     EQ == KW_RETURN return     NEQ !" />
+<meta name="description" content="词法规范 待编写  YC1 以下是YC1的词法规则，使用正则表达式表示。
+   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT (0|[1-9])[0-9]*   FLOAT_LIT ((0|[1-9])[0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD &#43; KW_INT int LPAREN (   MINUS - KW_DOUBLE double RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &gt; KW_ELSE else SEMICOLON ;   GTE &gt;= KW_WHILE while COMMA ,   LT &lt; KW_CONTINUE continue REL_AND &amp;&amp;   LTE &lt;= KW_BREAK break REL_OR ||   EQ == KW_RETURN return REL_NOT !"><meta property="og:title" content="词法规范" />
+<meta property="og:description" content="词法规范 待编写  YC1 以下是YC1的词法规则，使用正则表达式表示。
+   名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT (0|[1-9])[0-9]*   FLOAT_LIT ((0|[1-9])[0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD &#43; KW_INT int LPAREN (   MINUS - KW_DOUBLE double RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &gt; KW_ELSE else SEMICOLON ;   GTE &gt;= KW_WHILE while COMMA ,   LT &lt; KW_CONTINUE continue REL_AND &amp;&amp;   LTE &lt;= KW_BREAK break REL_OR ||   EQ == KW_RETURN return REL_NOT !" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yan-lang.github.io/ycc/lab/lang-std/lexical/" />
-<meta property="article:modified_time" content="2020-03-22T17:15:32+08:00" />
+<meta property="article:modified_time" content="2020-04-28T19:09:27+08:00" />
 <title>词法规范 | YCC实验 - 2020</title>
 <link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
 <!--
 Made with Book Theme
@@ -113,26 +113,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
+        <li>
 
   
-  <a href="/ycc/lab/summary/" class="collapsed ">实验综述</a>
+  <a href="/ycc/lab/summary/" class="">实验综述</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+</li>
       
     
       
@@ -202,26 +189,6 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/ycc/lab/lang-std/semantic/" class="">语义说明</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/cheatsheet/" class="">特性汇总</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/new-features/" class="">新特性提案</a>
   
 
 </li>
@@ -419,8 +386,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#词法规范">词法规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>
@@ -439,8 +406,8 @@ https://github.com/alex-shpak/hugo-book
   待编写
 </blockquote>
 
-<h2 id="yc0">YC0</h2>
-<p>以下是YC0的词法规则，使用正则表达式表示。</p>
+<h2 id="yc1">YC1</h2>
+<p>以下是YC1的词法规则，使用正则表达式表示。</p>
 <table>
 <thead>
 <tr>
@@ -455,11 +422,11 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 <tr>
 <td>INT_LIT</td>
-<td><code>0|[1-9][0-9]*</code></td>
+<td><code>(0|[1-9])[0-9]*</code></td>
 </tr>
 <tr>
 <td>FLOAT_LIT</td>
-<td><code>(0|[1-9][0-9]*).[0-9]*</code></td>
+<td><code>((0|[1-9])[0-9]*).[0-9]*</code></td>
 </tr>
 </tbody>
 </table>
@@ -486,8 +453,8 @@ https://github.com/alex-shpak/hugo-book
 <tr>
 <td>MINUS</td>
 <td><code>-</code></td>
-<td>KW_FLOAT</td>
-<td><code>float</code></td>
+<td>KW_DOUBLE</td>
+<td><code>double</code></td>
 <td>RPAREN</td>
 <td><code>)</code></td>
 </tr>
@@ -512,7 +479,7 @@ https://github.com/alex-shpak/hugo-book
 <td><code>&gt;</code></td>
 <td>KW_ELSE</td>
 <td><code>else</code></td>
-<td>COLUMN</td>
+<td>SEMICOLON</td>
 <td><code>;</code></td>
 </tr>
 <tr>
@@ -528,24 +495,24 @@ https://github.com/alex-shpak/hugo-book
 <td><code>&lt;</code></td>
 <td>KW_CONTINUE</td>
 <td><code>continue</code></td>
-<td></td>
-<td></td>
+<td>REL_AND</td>
+<td><code>&amp;&amp;</code></td>
 </tr>
 <tr>
 <td>LTE</td>
 <td><code>&lt;=</code></td>
 <td>KW_BREAK</td>
 <td><code>break</code></td>
-<td></td>
-<td></td>
+<td>REL_OR</td>
+<td><code>||</code></td>
 </tr>
 <tr>
 <td>EQ</td>
 <td><code>==</code></td>
 <td>KW_RETURN</td>
 <td><code>return</code></td>
-<td></td>
-<td></td>
+<td>REL_NOT</td>
+<td><code>!</code></td>
 </tr>
 <tr>
 <td>NEQ</td>
@@ -555,9 +522,40 @@ https://github.com/alex-shpak/hugo-book
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>ASSIGN</td>
+<td><code>=</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h2 id="yc1">YC1</h2>
+<h2 id="yc2">YC2</h2>
+<p>新增单词类型如下</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LBRACKET</td>
+<td><code>[</code></td>
+</tr>
+<tr>
+<td>RBRACKET</td>
+<td><code>]</code></td>
+</tr>
+<tr>
+<td>KW_FOR</td>
+<td><code>for</code></td>
+</tr>
+</tbody>
+</table>
 </article>
  
       
@@ -570,9 +568,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/9e6761f349cee8c0d5071ad5c629f26a4f5b6b80" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/c6153549533e77b60504be340055d751a0c74d9f" title='最后修改者 Zeqiang-Lai | Apr 28, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 22, 2020</span>
+      <span>Apr 28, 2020</span>
     </a>
   </div>
 
@@ -608,8 +606,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#词法规范">词法规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>

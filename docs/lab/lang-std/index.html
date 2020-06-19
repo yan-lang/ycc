@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="语言规范 YC1语言与C语言非常接近，但是YC语言被设计的比C语言更为简单，因为你们需要为这个语言编写一个编译器。
 我们大幅精简并修改了部分C语言的语法形成YC语言。大部分YC语言的语法都可以用LL(1)文法进行描述，我们希望这个更为简单的&quot;C语言&quot;能够帮助你们在这个学期内及时的完成整个实验并掌握编写一个编译器所必要的知识和技巧。  为了让你们能够更快速的编写你的编译器，我们删除了许多C语言中比较复杂或不常用的语法，如：
- 预处理指令与宏：YC语言只支持单文件编译，不支持 宏 。 复杂的类型系统：YC语言只支持有限的几种数据类型。 复杂的指针用法：YC语言只支持有限的指针使用方法（指针为扩展内容）。 &hellip;  为了让你能轻松的手写语法分析器，我们改进了C语言的部分语法使其更容易解析，如
- 数组定义使用Java风格2, int[] a = new int[10]。(数组实现不是强制要求)。 &hellip;  为满足不同层次学生的需求，我们为YC语言制定了多个版本，每个版本都会在前一个版本添加一些新特性。所有学生只要求完成YC0这个版本，后面的版本将提供给学有余力的同学完成。
- YC0 YC0是C语言的一个绝对子集(一个合法的YC0程序一定是一个合法的C程序，你可以使用任何一个C语言编译器编译YC0的程序)。
+ 预处理指令与宏：YC语言只支持单文件编译，不支持宏。 复杂的类型系统：YC语言只支持有限的几种数据类型。 复杂的指针用法：YC语言只支持有限的指针使用方法（指针为扩展内容）。 &hellip;  为满足不同层次学生的需求，我们为YC语言制定了多个版本，每个版本都会在前一个版本添加一些新特性。所有学生只要求完成YC1这个版本，后面的版本将提供给学有余力的同学完成。
+ YC1 YC1是C语言的一个子集(一个合法的YC1程序一定是一个合法的C程序，你可以使用任何一个C语言编译器编译YC1的程序)。
 这个版本包含了YC语言的基础语法，如变量，函数，循环，分支，表达式等。
-  词法规范 语法规范 语义说明     YC1 开发中&hellip;    YC是Yan C的缩写。 &#x21a9;&#xfe0e;
- 为什么这种风格更好解析? 事实上这是一个课后题, 请思考。 &#x21a9;&#xfe0e;
+  词法规范 语法规范 语义说明     YC2 YC2仍然是C语言的一个子集。
+这个版本新增了数组和for循环。
+  词法规范 语法规范 语义说明    开发中&hellip;    YC是Yan C的缩写。 &#x21a9;&#xfe0e;
    "><meta property="og:title" content="语言规范" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -21,10 +21,10 @@
 <link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://yan-lang.github.io/ycc/lab/lang-std/index.xml" title="YCC实验 - 2020" />
 <!--
@@ -120,26 +120,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
+        <li>
 
   
-  <a href="/ycc/lab/summary/" class="collapsed ">实验综述</a>
+  <a href="/ycc/lab/summary/" class="">实验综述</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+</li>
       
     
       
@@ -209,26 +196,6 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/ycc/lab/lang-std/semantic/" class="">语义说明</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/cheatsheet/" class="">特性汇总</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/new-features/" class="">新特性提案</a>
   
 
 </li>
@@ -426,8 +393,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#语言规范">语言规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>
@@ -449,41 +416,52 @@ https://github.com/alex-shpak/hugo-book
 
 <p>为了让你们能够更快速的编写你的编译器，我们删除了许多C语言中比较复杂或不常用的语法，如：</p>
 <ol>
-<li><del>预处理指令与宏</del>：YC语言只支持<strong>单文件编译</strong>，不支持
-  <a href="http://c.biancheng.net/view/1980.html">宏</a>
-。</li>
+<li><del>预处理指令与宏</del>：YC语言只支持<strong>单文件编译</strong>，不支持<a href="http://c.biancheng.net/view/1980.html">宏</a>。</li>
 <li><del>复杂的类型系统</del>：YC语言只支持有限的几种数据类型。</li>
 <li><del>复杂的指针用法</del>：YC语言只支持有限的指针使用方法（指针为扩展内容）。</li>
 <li>&hellip;</li>
 </ol>
-<p>为了让你能轻松的手写语法分析器，我们改进了C语言的部分语法使其更容易解析，如</p>
-<ol>
-<li>数组定义使用Java风格<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, <code>int[] a = new int[10]</code>。(数组实现不是强制要求)。</li>
-<li>&hellip;</li>
-</ol>
-<p>为满足不同层次学生的需求，我们为YC语言制定了多个版本，每个版本都会在前一个版本添加一些新特性。<strong>所有学生只要求完成YC0这个版本</strong>，后面的版本将提供给学有余力的同学完成。</p>
+<p>为满足不同层次学生的需求，我们为YC语言制定了多个版本，每个版本都会在前一个版本添加一些新特性。<strong>所有学生只要求完成YC1这个版本</strong>，后面的版本将提供给学有余力的同学完成。</p>
 <hr>
-<h2 id="yc0">YC0</h2>
+<h2 id="yc1">YC1</h2>
 <div class="book-columns flex flex-wrap">
   
   <div class="flex-even markdown-inner">
-    <p><strong>YC0是C语言的一个绝对子集</strong>(一个合法的YC0程序一定是一个合法的C程序，你可以使用任何一个C语言编译器编译YC0的程序)。</p>
+    <p><strong>YC1是C语言的一个子集</strong>(一个合法的YC1程序一定是一个合法的C程序，你可以使用任何一个C语言编译器编译YC1的程序)。</p>
 <p>这个版本包含了YC语言的基础语法，如变量，函数，循环，分支，表达式等。</p>
 
   </div>
   
   <div class="flex-even markdown-inner">
     <ul>
-<li><a href="/ycc/lab/lang-std/lexical/#yc0">词法规范</a></li>
-<li><a href="/ycc/lab/lang-std/grammar/#yc0">语法规范</a></li>
-<li><a href="/ycc/lab/lang-std/semantic/#yc0">语义说明</a></li>
+<li><a href="/ycc/lab/lang-std/lexical/#yc1">词法规范</a></li>
+<li><a href="/ycc/lab/lang-std/grammar/#yc1">语法规范</a></li>
+<li><a href="/ycc/lab/lang-std/semantic/#yc1">语义说明</a></li>
 </ul>
   </div>
   
 </div>
 
 <hr>
-<h2 id="yc1">YC1</h2>
+<h2 id="yc2">YC2</h2>
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <p>YC2仍然是C语言的一个子集。</p>
+<p>这个版本新增了数组和for循环。</p>
+
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <ul>
+<li><a href="/ycc/lab/lang-std/lexical/#yc2">词法规范</a></li>
+<li><a href="/ycc/lab/lang-std/grammar/#yc2">语法规范</a></li>
+<li><a href="/ycc/lab/lang-std/semantic/#yc2">语义说明</a></li>
+</ul>
+  </div>
+  
+</div>
+
 <blockquote class="book-hint warning">
   开发中&hellip;
 </blockquote>
@@ -493,9 +471,6 @@ https://github.com/alex-shpak/hugo-book
 <ol>
 <li id="fn:1" role="doc-endnote">
 <p>YC是Yan C的缩写。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>为什么这种风格更好解析? 事实上这是一个课后题, 请思考。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -511,9 +486,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/8c69a3315a78e71795b0d09b72c7cd1591229ea0" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/c6153549533e77b60504be340055d751a0c74d9f" title='最后修改者 Zeqiang-Lai | Apr 28, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 22, 2020</span>
+      <span>Apr 28, 2020</span>
     </a>
   </div>
 
@@ -549,8 +524,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#语言规范">语言规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>

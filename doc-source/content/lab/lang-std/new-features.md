@@ -1,6 +1,7 @@
 ---
 title: 新特性提案
 weight: 10
+bookHidden: true
 ---
 
 # 新特性提案

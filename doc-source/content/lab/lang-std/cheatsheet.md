@@ -1,6 +1,7 @@
 ---
 title: 特性汇总
 weight: 9
+bookHidden: true
 ---
 
 # 特性汇总

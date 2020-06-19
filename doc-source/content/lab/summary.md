@@ -9,22 +9,35 @@ weight: 1
 
 ## 评分标准
 
+| 实验名称                                         | 分数 | 迟交扣分 |
+| ------------------------------------------------ | ---- | -------- |
+| [Lab1: 词法分析]({{< relref "lab/note/lab1" >}}) | 25   | 5分/天   |
+| [Lab2: 语法分析]({{< relref "lab/note/lab2" >}}) | 25   | 5/天     |
+| [Lab3: 语义分析]()                               | 25   | 3/天     |
+| [Lab4: 中间代码生成]()                           | 25   | 3/天     |
+
+
 
 ## 提交方法
 
+请将的你程序打包成jar包。
 
+请通过我们的自动评测网站提交你的实现。
 
 ## 学术诚信声明
 
-The university policies and procedures on academic integrity will be applied rigorously.
+{{< hint danger >}}
 
-All labs in this course must be done either by a single student or by a pair of students, at your discretion. The work must be your own and your partner's. Do not copy any parts of the lab from anyone. Do not look at other students' code. Do not make parts of your code available to anyone besides your partner, and make sure noone else can read your files.
+我们将严格执行学校的学术诚信政策和程序。
 
-General libraries, such as the SML Basis Library, the SML/NJ Library, or other publicly available libraries may be used in your code. This also includes the code supplied with the textbook. Please clearly identify if you used library code, credit its source, and summarize any changes you may have made to the library. Portions of other students' compilers, from this or previous semesters, are explicitly prohibited. If in doubt, please contact the instructor.
+本课程的所有实验必须由一名学生自行完成。这项工作必须是你自己的。不要从任何人那里复制实验的任何部分。不要看其他学生的代码。不要让任何人可以使用你的部分代码，并确保没有其他人可以读取你的文件。
 
-All assignments in this course are single-student assignments. The work must be all your own. Do not copy any parts of any of the assignments from anyone. Do not look at other students' papers. Do not make any parts of your assignments available to anyone, and make sure noone can read your files.
+您的代码中可以使用通用库，如SML基本库、SML/NJ库或其他公共可用库。这也包括教科书提供的代码。请明确标识您是否使用了库代码，确认其来源，并总结您可能对库所做的任何更改。其他学生本学期或上学期编写编译器是明确禁止使用的。如有疑问，请联系导师。
 
-We will be using the Moss system to detect software plagiarism.
+本课程的所有作业都是单人作业。这工作一定是你自己做的。不要抄袭任何人的作业的任何部分。不要看其他学生的试卷。不要让任何人知道你的作业的任何部分，并且确保没有人可以阅读你的文件。
 
-It is not considered cheating to clarify vague points in the labs, assignments, or textbook, or to give help or receive help in using the computer systems, compilers, debuggers, profilers, or other facilities.
+我们将使用Moss系统来检测抄袭行为。
 
+在实验室、作业或教科书中澄清模糊点，或在使用计算机系统、编译器、调试器、分析器或其他工具时提供帮助或接受帮助，都不被视为作弊。
+
+{{< /hint >}}

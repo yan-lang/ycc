@@ -22,7 +22,7 @@ weight: 1
 | 名称   | 符号 | 名称        | 符号       | 名称      | 符号 |
 | ------ | ---- | ----------- | ---------- | --------- | ---- |
 | ADD    | `+`  | KW_INT      | `int`      | LPAREN    | `(`  |
-| MINUS  | `-`  | KW_FLOAT    | `float`    | RPAREN    | `)`  |
+| MINUS  | `-`  | KW_DOUBLE   | `double`   | RPAREN    | `)`  |
 | MULTI  | `*`  | KW_VOID     | `void`     | LBRACE    | `{`  |
 | DIV    | `/`  | KW_IF       | `if`       | RBRACE    | `}`  |
 | GT     | `>`  | KW_ELSE     | `else`     | SEMICOLON | `;`  |
@@ -35,3 +35,10 @@ weight: 1
 
 ## YC2
 
+新增单词类型如下
+
+| 名称     | 符号  |
+| -------- | ----- |
+| LBRACKET | `[`   |
+| RBRACKET | `]`   |
+| KW_FOR   | `for` |

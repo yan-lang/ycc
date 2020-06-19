@@ -5,28 +5,28 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="语法规范 编写中  我们使用扩展BNF范式描述我们的文法。
- 以下内容修改自 Decaf语言规范 。
+ 以下内容修改自Decaf语言规范。
  * 表示一个符号出现任意多次，包括零次 &#43; 表示一个符号出现至少一次 ? 表示一个符号可选，即至多出现一次 | 分隔多个产生式右部，无顺序 ε 表示空，即不存在任何符号  所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。
- YC0 终结符的词法规则见 词法规范 | YC0 。
-为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看 语义说明 | YC0 。
+ YC1 终结符的词法规则见词法规范 | YC1。
+为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看语义说明 | YC1。
 /* 程序结构 */ Program ::= Decl* Decl ::= VarDecl | FuncDecl Block ::= Stmt* Stmt ::= VarDecl | ExprStmt | IfStmt | WhileStmt | ReturnStmt | EmptyStmt EmptyStmt ::= &#39;;&#39; /* 变量 */ VarDecl ::= Type Id &#39;=&#39; Expr &#39;;&#39; Type ::= &#39;int&#39; | &#39;float&#39; | &#39;void&#39; /* 表达式 */ Expr ::= &#39;(&#39; Expr &#39;)&#39; // 括号表达式 | Literal // 常量, 如1."><meta property="og:title" content="语法规范" />
 <meta property="og:description" content="语法规范 编写中  我们使用扩展BNF范式描述我们的文法。
- 以下内容修改自 Decaf语言规范 。
+ 以下内容修改自Decaf语言规范。
  * 表示一个符号出现任意多次，包括零次 &#43; 表示一个符号出现至少一次 ? 表示一个符号可选，即至多出现一次 | 分隔多个产生式右部，无顺序 ε 表示空，即不存在任何符号  所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。
- YC0 终结符的词法规则见 词法规范 | YC0 。
-为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看 语义说明 | YC0 。
+ YC1 终结符的词法规则见词法规范 | YC1。
+为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看语义说明 | YC1。
 /* 程序结构 */ Program ::= Decl* Decl ::= VarDecl | FuncDecl Block ::= Stmt* Stmt ::= VarDecl | ExprStmt | IfStmt | WhileStmt | ReturnStmt | EmptyStmt EmptyStmt ::= &#39;;&#39; /* 变量 */ VarDecl ::= Type Id &#39;=&#39; Expr &#39;;&#39; Type ::= &#39;int&#39; | &#39;float&#39; | &#39;void&#39; /* 表达式 */ Expr ::= &#39;(&#39; Expr &#39;)&#39; // 括号表达式 | Literal // 常量, 如1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yan-lang.github.io/ycc/lab/lang-std/grammar/" />
-<meta property="article:modified_time" content="2020-03-22T17:15:32+08:00" />
+<meta property="article:modified_time" content="2020-04-28T19:09:27+08:00" />
 <title>语法规范 | YCC实验 - 2020</title>
 <link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/book.min.01414a074fbf17382c24bda813e9a2debcc9bc1dec53e2286241a6ce23024ce4.css" integrity="sha256-AUFKB0&#43;/FzgsJL2oE&#43;mi3rzJvB3sU&#43;IoYkGmziMCTOQ=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/cn.search.min.856ca94354c4db2cf23cf064a89b77ae882a7d67b8c0079edbd03a353a343240.js" integrity="sha256-hWypQ1TE2yzyPPBkqJt3rogqfWe4wAee29A6NTo0MkA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
 <!--
 Made with Book Theme
@@ -121,26 +121,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
+        <li>
 
   
-  <a href="/ycc/lab/summary/" class="collapsed ">实验综述</a>
+  <a href="/ycc/lab/summary/" class="">实验综述</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+</li>
       
     
       
@@ -210,26 +197,6 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/ycc/lab/lang-std/semantic/" class="">语义说明</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/cheatsheet/" class="">特性汇总</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/ycc/lab/lang-std/new-features/" class="">新特性提案</a>
   
 
 </li>
@@ -427,8 +394,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#语法规范">语法规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>
@@ -449,9 +416,7 @@ https://github.com/alex-shpak/hugo-book
 
 <p>我们使用扩展BNF范式描述我们的文法。</p>
 <blockquote>
-<p>以下内容修改自
-  <a href="https://decaf-lang.gitbook.io/decaf-book/spec#wen-fa-gui-fan">Decaf语言规范</a>
-。</p>
+<p>以下内容修改自<a href="https://decaf-lang.gitbook.io/decaf-book/spec#wen-fa-gui-fan">Decaf语言规范</a>。</p>
 <ul>
 <li><code>*</code> 表示一个符号出现任意多次，包括零次</li>
 <li><code>+</code> 表示一个符号出现至少一次</li>
@@ -461,34 +426,30 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。</p>
 </blockquote>
-<h2 id="yc0">YC0</h2>
-<p>终结符的词法规则见
-  <a href="/ycc/lab/lang-std/lexical/#yc0">词法规范 | YC0</a>
-。</p>
-<p>为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看
-  <a href="/ycc/lab/lang-std/semantic/#yc0">语义说明 | YC0</a>
-。</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-BNF" data-lang="BNF">/* 程序结构 */
-Program  <span style="color:#f92672">::=</span>  Decl*
-Decl     <span style="color:#f92672">::=</span>  VarDecl
+<h2 id="yc1">YC1</h2>
+<p>终结符的词法规则见<a href="/ycc/lab/lang-std/lexical/#yc1">词法规范 | YC1</a>。</p>
+<p>为了让文法尽可能的简单，我们没有将许多语义显示的注入文法当中。对于详细的语义要求，如表达式优先级等，请查看<a href="/ycc/lab/lang-std/semantic/#yc1">语义说明 | YC1</a>。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-BNF" data-lang="BNF">/* 程序结构 */
+Program  <span style="color:#000">::=</span>  Decl*
+Decl     <span style="color:#000">::=</span>  VarDecl
            |  FuncDecl
 
-Block     <span style="color:#f92672">::=</span>  Stmt*
-Stmt      <span style="color:#f92672">::=</span>  VarDecl
+Block     <span style="color:#000">::=</span>  Stmt*
+Stmt      <span style="color:#000">::=</span>  VarDecl
             |  ExprStmt
             |  IfStmt
             |  WhileStmt
             |  ReturnStmt
             |  EmptyStmt
 
-EmptyStmt  <span style="color:#f92672">::=</span> &#39;;&#39;
+EmptyStmt  <span style="color:#000">::=</span> &#39;;&#39;
 
 /* 变量 */
-VarDecl  <span style="color:#f92672">::=</span>  Type Id &#39;=&#39; Expr &#39;;&#39;
-Type    <span style="color:#f92672">::=</span>  &#39;int&#39; | &#39;float&#39; | &#39;void&#39;
+VarDecl  <span style="color:#000">::=</span>  Type Id &#39;=&#39; Expr &#39;;&#39;
+Type    <span style="color:#000">::=</span>  &#39;int&#39; | &#39;float&#39; | &#39;void&#39;
 
 /* 表达式 */
-Expr  <span style="color:#f92672">::=</span> &#39;(&#39; Expr &#39;)&#39;         // 括号表达式
+Expr  <span style="color:#000">::=</span> &#39;(&#39; Expr &#39;)&#39;         // 括号表达式
         | Literal              // 常量, 如1.34, 10
         | Id                   // 标识符也是表达式
         | FunCall              // 函数调用
@@ -496,36 +457,41 @@ Expr  <span style="color:#f92672">::=</span> &#39;(&#39; Expr &#39;)&#39;       
         | BinaryExpr           // 二元表达式
         | TypeCastExpr         // 类型转换
 
-Literal   <span style="color:#f92672">::=</span>  INT_LIT | FLOAT_LIT
-Id        <span style="color:#f92672">::=</span>  IDENTIFIER
+Literal   <span style="color:#000">::=</span>  INT_LIT | FLOAT_LIT
+Id        <span style="color:#000">::=</span>  IDENTIFIER
 
-FunCall   <span style="color:#f92672">::=</span>  Id &#39;(&#39; ArgList &#39;)&#39;
-ArgList   <span style="color:#f92672">::=</span>  Expr ((&#39;,&#39; Expr)* | ε)  // 实参列表
+FunCall   <span style="color:#000">::=</span>  Id &#39;(&#39; ArgList &#39;)&#39;
+ArgList   <span style="color:#000">::=</span>  Expr ((&#39;,&#39; Expr)* | ε)  // 实参列表
 
-UnaryExpr     <span style="color:#f92672">::=</span> UnaryOp Expression
-UnaryOp       <span style="color:#f92672">::=</span>  &#39;-&#39;
+UnaryExpr     <span style="color:#000">::=</span> UnaryOp Expression
+UnaryOp       <span style="color:#000">::=</span>  &#39;-&#39; | &#39;!&#39;
 
-BinaryExpr    <span style="color:#f92672">::=</span>  Expr BinaryOp Expr
-BinaryOp      <span style="color:#f92672">::=</span>  &#39;*&#39; | &#39;/&#39; | &#39;+&#39; | &#39;-&#39; | &#39;&gt;&#39; | &#39;&gt;=&#39; | &#39;&lt;&#39; | &#39;&lt;=&#39; | &#39;==&#39; | &#39;!=&#39; | &#39;=&#39;
+BinaryExpr    <span style="color:#000">::=</span>  Expr BinaryOp Expr
+BinaryOp      <span style="color:#000">::=</span>  &#39;*&#39; | &#39;/&#39; | &#39;+&#39; | &#39;-&#39; | &#39;&gt;&#39; | &#39;&gt;=&#39; | &#39;&lt;&#39; | &#39;&lt;=&#39; | &#39;==&#39; | &#39;!=&#39; | &#39;=&#39; | &#39;&amp;&amp;&#39; | &#39;||&#39;
 
-TypeCastExpr  <span style="color:#f92672">::=</span>  &#39;(&#39; Type &#39;)&#39; Expression
+TypeCastExpr  <span style="color:#000">::=</span>  &#39;(&#39; Type &#39;)&#39; Expression
 
 /* 分支 */
-IfStmt  <span style="color:#f92672">::=</span>  &#39;if&#39; &#39;(&#39; Expr &#39;)&#39; Block ( &#39;else&#39; Block )?
+IfStmt  <span style="color:#000">::=</span>  &#39;if&#39; &#39;(&#39; Expr &#39;)&#39; Block ( &#39;else&#39; Block )?
 
 /* 循环 */
-WhileStmt     <span style="color:#f92672">::=</span>  &#39;while&#39; &#39;(&#39; Expr &#39;)&#39; Block
-ContinueStmt  <span style="color:#f92672">::=</span>  &#39;continue&#39; &#39;;&#39;
-BreakStmt     <span style="color:#f92672">::=</span>  &#39;break&#39; &#39;;&#39;
+WhileStmt     <span style="color:#000">::=</span>  &#39;while&#39; &#39;(&#39; Expr &#39;)&#39; Block
+ContinueStmt  <span style="color:#000">::=</span>  &#39;continue&#39; &#39;;&#39;
+BreakStmt     <span style="color:#000">::=</span>  &#39;break&#39; &#39;;&#39;
 
 /* 函数 */
-FuncDecl    <span style="color:#f92672">::=</span>  Type Id &#39;(&#39; ParaList &#39;)&#39; Block
-ParaList    <span style="color:#f92672">::=</span>  Para ((&#39;,&#39; Para)* | ε)           // 形参列表
-Para        <span style="color:#f92672">::=</span>  Type Id
-ReturnStmt  <span style="color:#f92672">::=</span>  &#39;return&#39; Expression? &#39;;&#39;
+FuncDecl    <span style="color:#000">::=</span>  Type Id &#39;(&#39; ParaList &#39;)&#39; Block
+ParaList    <span style="color:#000">::=</span>  Para ((&#39;,&#39; Para)* | ε)           // 形参列表
+Para        <span style="color:#000">::=</span>  Type Id
+ReturnStmt  <span style="color:#000">::=</span>  &#39;return&#39; Expression? &#39;;&#39;
 
-</code></pre></div><h2 id="yc1">YC1</h2>
-</article>
+</code></pre></div><h2 id="yc2">YC2</h2>
+<p>数组文法如下:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-BNF" data-lang="BNF">VarDecl <span style="color:#000">::=</span> Type Id(&#39;[&#39; INT_LIT &#39;]&#39;)* (&#39;=&#39; Expr)* &#39;;&#39;
+LValue  <span style="color:#000">::=</span> Id
+</code></pre></div><p>新增For循环文法如下：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-BNF" data-lang="BNF">`for` `(`VarDecl   `)`
+</code></pre></div></article>
  
       
 
@@ -537,9 +503,9 @@ ReturnStmt  <span style="color:#f92672">::=</span>  &#39;return&#39; Expression?
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/9e6761f349cee8c0d5071ad5c629f26a4f5b6b80" title='最后修改者 Zeqiang-Lai | Mar 22, 2020' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/c6153549533e77b60504be340055d751a0c74d9f" title='最后修改者 Zeqiang-Lai | Apr 28, 2020' target="_blank" rel="noopener">
       <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Mar 22, 2020</span>
+      <span>Apr 28, 2020</span>
     </a>
   </div>
 
@@ -575,8 +541,8 @@ ReturnStmt  <span style="color:#f92672">::=</span>  &#39;return&#39; Expression?
   <ul>
     <li><a href="#语法规范">语法规范</a>
       <ul>
-        <li><a href="#yc0">YC0</a></li>
         <li><a href="#yc1">YC1</a></li>
+        <li><a href="#yc2">YC2</a></li>
       </ul>
     </li>
   </ul>
