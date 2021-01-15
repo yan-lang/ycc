@@ -10,18 +10,18 @@
 . ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── yan │ │ │ └── ycc │ │ │ └── impl │ │ │ └── Main.java │ │ └── resources │ │ └── META-INF │ │ └── MANIFEST.MF │ └── test │ └── java └── ycc-template.iml 打开Main.java，你会发现里面已经写了一些代码了。这三行代码是使用我们的实验框架的最基础的代码。通过这三行代码，你可以得到一个具有命令行解析能力以及多功能解释器（REPL）的编译器&amp;解释器（虽然还不能执行任何编译任务）。"><meta property="og:title" content="Java" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yan-lang.github.io/ycc/docs/framework-tutorial/java/" />
+<meta property="og:url" content="https://yan-lang.github.io/ycc/framework-tutorial/java/" />
 
 <title>Java | YCC实验 - 2020</title>
-<link rel="icon" href="/ycc/docs/favicon.png" type="image/x-icon">
+<link rel="icon" href="/ycc/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/ycc/docs/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
+<link rel="stylesheet" href="/ycc/book.min.2e758b50f33fba371ef358e0e48662a6efe229ed0a925e2061ef5cd6be844b64.css" integrity="sha256-LnWLUPM/ujce81jg5IZipu/iKe0Kkl4gYe9c1r6ES2Q=">
 
 
-<script defer src="/ycc/docs/cn.search.min.c7c4ff7148d70a697ce04ec1ae5d5c0e6d3a31ac7f162c681b28764fdac34120.js" integrity="sha256-x8T/cUjXCml84E7Brl1cDm06Max/FixoGyh2T9rDQSA="></script>
+<script defer src="/ycc/cn.search.min.b21991db637318ffa12aa569d5b157db628bb4cdc072b632b267d96af1a4540d.js" integrity="sha256-shmR22NzGP&#43;hKqVp1bFX22KLtM3AcrYysmfZavGkVA0="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://yan-lang.github.io/ycc/docs/framework-tutorial/java/index.xml" title="YCC实验 - 2020" />
+<link rel="alternate" type="application/rss+xml" href="https://yan-lang.github.io/ycc/framework-tutorial/java/index.xml" title="YCC实验 - 2020" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -37,7 +37,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/ycc/docs"><span>YCC实验 - 2020</span>
+  <a href="/ycc"><span>YCC实验 - 2020</span>
   </a>
 </h2>
 
@@ -75,7 +75,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/announcements/" class="">重要通知</a>
+  <a href="/ycc/announcements/" class="">重要通知</a>
   
 
 
@@ -118,7 +118,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/ycc/docs/lab/summary/" class="">实验综述</a>
+  <a href="/ycc/lab/summary/" class="">实验综述</a>
   
 
 </li>
@@ -131,7 +131,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/lab/note/" class="collapsed ">实验说明</a>
+  <a href="/ycc/lab/note/" class="collapsed ">实验说明</a>
   
 
 
@@ -154,7 +154,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/lab/lang-std/" class="collapsed ">语言规范</a>
+  <a href="/ycc/lab/lang-std/" class="collapsed ">语言规范</a>
   
 
 
@@ -204,7 +204,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/framework-tutorial/java/" class="collapsed active">Java</a>
+  <a href="/ycc/framework-tutorial/java/" class="collapsed active">Java</a>
   
 
 
@@ -223,7 +223,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/framework-tutorial/java/lexer/" class="collapsed ">Lab1 词法分析器</a>
+  <a href="/ycc/framework-tutorial/java/lexer/" class="collapsed ">Lab1 词法分析器</a>
   
 
 
@@ -246,7 +246,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/ycc/docs/framework-tutorial/java/parser/" class="collapsed ">Lab2 语法分析器</a>
+  <a href="/ycc/framework-tutorial/java/parser/" class="collapsed ">Lab2 语法分析器</a>
   
 
 
@@ -303,7 +303,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/ycc/docs/other/faq/" class="">常见问题</a>
+  <a href="/ycc/other/faq/" class="">常见问题</a>
   
 
 </li>
@@ -313,7 +313,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/ycc/docs/other/reference/" class="">参考资料</a>
+  <a href="/ycc/other/reference/" class="">参考资料</a>
   
 
 </li>
@@ -385,13 +385,13 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/ycc/docs/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/ycc/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Java</strong>
 
   <label for="toc-control">
-    <img src="/ycc/docs/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/ycc/svg/toc.svg" class="book-icon" alt="Table of Contents" />
   </label>
 </div>
 
@@ -492,7 +492,7 @@ Usage: ycc <span style="color:#000">[</span>-hV<span style="color:#000">]</span>
   <div>
     
     <a class="flex align-center" href="https://github.com/yan-lang/ycc//commit/0ea78c9bfbba35caf1dc705abfb289c434224db5" title='最后修改者 Zeqiang-Lai | Jun 19, 2020' target="_blank" rel="noopener">
-      <img src="/ycc/docs/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <img src="/ycc/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>Jun 19, 2020</span>
     </a>
   </div>

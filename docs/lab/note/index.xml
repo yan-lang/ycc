@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>实验说明 on YCC实验 - 2020</title>
-    <link>https://yan-lang.github.io/ycc/docs/lab/note/</link>
+    <link>https://yan-lang.github.io/ycc/lab/note/</link>
     <description>Recent content in 实验说明 on YCC实验 - 2020</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/docs/lab/note/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/lab/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实验1 词法分析</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/note/lab1/</link>
+      <link>https://yan-lang.github.io/ycc/lab/note/lab1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/note/lab1/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/note/lab1/</guid>
       <description>实验1 词法分析   Related files   test.c  (0 ko)    </description>
     </item>
     
     <item>
       <title>实验2 语法分析</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/note/lab2/</link>
+      <link>https://yan-lang.github.io/ycc/lab/note/lab2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/note/lab2/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/note/lab2/</guid>
       <description>实验2 语法分析  Get Home  Contribute  </description>
     </item>
     

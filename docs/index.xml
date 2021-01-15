@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on YCC实验 - 2020</title>
-    <link>https://yan-lang.github.io/ycc/docs/</link>
+    <link>https://yan-lang.github.io/ycc/</link>
     <description>Recent content in Introduction on YCC实验 - 2020</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/docs/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实验1 词法分析</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/note/lab1/</link>
+      <link>https://yan-lang.github.io/ycc/lab/note/lab1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/note/lab1/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/note/lab1/</guid>
       <description>实验1 词法分析   Related files   test.c  (0 ko)    </description>
     </item>
     
     <item>
       <title>实验综述</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/summary/</link>
+      <link>https://yan-lang.github.io/ycc/lab/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/summary/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/summary/</guid>
       <description>实验综述 在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。
 评分标准    实验名称 分数 迟交扣分     Lab1: 词法分析 25 5分/天   Lab2: 语法分析 25 5/天   Lab3: 语义分析 25 3/天   Lab4: 中间代码生成 25 3/天    提交方法 请将的你程序打包成jar包。
 请通过我们的自动评测网站提交你的实现。
@@ -34,48 +34,48 @@
     
     <item>
       <title>常见问题</title>
-      <link>https://yan-lang.github.io/ycc/docs/other/faq/</link>
+      <link>https://yan-lang.github.io/ycc/other/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/other/faq/</guid>
+      <guid>https://yan-lang.github.io/ycc/other/faq/</guid>
       <description>常见问题 不支持发行版本5</description>
     </item>
     
     <item>
       <title>词法规范</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/lang-std/lexical/</link>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/lexical/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/lang-std/lexical/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/lexical/</guid>
       <description>词法规范 待编写  YC1 以下是YC1的词法规则，使用正则表达式表示。
    名称 符号     IDENTIFIER [A-Za-z_][A-Za-z0-9_]*   INT_LIT (0|[1-9])[0-9]*   FLOAT_LIT ((0|[1-9])[0-9]*).[0-9]*       名称 符号 名称 符号 名称 符号     ADD + KW_INT int LPAREN (   MINUS - KW_DOUBLE double RPAREN )   MULTI * KW_VOID void LBRACE {   DIV / KW_IF if RBRACE }   GT &amp;gt; KW_ELSE else SEMICOLON ;   GTE &amp;gt;= KW_WHILE while COMMA ,   LT &amp;lt; KW_CONTINUE continue REL_AND &amp;amp;&amp;amp;   LTE &amp;lt;= KW_BREAK break REL_OR ||   EQ == KW_RETURN return REL_NOT !</description>
     </item>
     
     <item>
       <title>参考资料</title>
-      <link>https://yan-lang.github.io/ycc/docs/other/reference/</link>
+      <link>https://yan-lang.github.io/ycc/other/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/other/reference/</guid>
+      <guid>https://yan-lang.github.io/ycc/other/reference/</guid>
       <description>参考资料 这里是你可以参考的相似项目和相关资料，欢迎补充。
 课程实验  伯克利的CS164: Programming Languages and Compilers, Spring 2019 斯坦福的CS143: Compilers CMU的15-411 Compiler Design 清华的Decaf  开源编译器&amp;amp;解释器  wenyan: 文言文编程 Wren Pony SmallerC 8cc ShivyC: Python实现的C语言编译器。 xcc wgtcc: C++实现的C语言编译器, 代码写的不错。 Enkel: 基于Java, Antlr的语言，编译成Java字节码，有文字教程。 c4: C语言实现的C编译器，非常精简, 只有四个函数, 支持自举。 xc: 修改自C4, 提供中文教程。 finch: 自制的动态语言, 使用C++编写  电子书  Lox解释器及其配套电子书  源码: https://github.com/munificent/craftinginterpreters   Introduction to Compilers and Language Design  配套代码: https://github.com/dthain/compilerbook-examples   A small demonstration how to use ANTLR 4&amp;rsquo;s visitor feature.</description>
     </item>
     
     <item>
       <title>实验2 语法分析</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/note/lab2/</link>
+      <link>https://yan-lang.github.io/ycc/lab/note/lab2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/note/lab2/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/note/lab2/</guid>
       <description>实验2 语法分析  Get Home  Contribute  </description>
     </item>
     
     <item>
       <title>语法规范</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/lang-std/grammar/</link>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/grammar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/lang-std/grammar/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/grammar/</guid>
       <description>语法规范 编写中  我们使用扩展BNF范式描述我们的文法。
  以下内容修改自Decaf语言规范。
  * 表示一个符号出现任意多次，包括零次 + 表示一个符号出现至少一次 ? 表示一个符号可选，即至多出现一次 | 分隔多个产生式右部，无顺序 ε 表示空，即不存在任何符号  所有终结符要么以单引号字符串的形式直接出现，或者用以全大写字母的标识符代替，非终结符对应的标识符均以大写字母开头,并使用驼峰命名法。此外，我们还使用 () 来显式限定上述元符号作用的符号或者符号串。
@@ -86,10 +86,10 @@
     
     <item>
       <title>语义说明</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/lang-std/semantic/</link>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/semantic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/lang-std/semantic/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/semantic/</guid>
       <description>语义说明 编写中  YC1 在语言规范一章中，我们已经说了，YC1的文法是C语言文法的一个子集，因此YC1程序也是C语言程序。本节主要阐述YC1语言相对于C语言的一些特殊规定。
 程序结构 一个YC1程序由数个声明（Declaration）构成，声明包括函数声明和变量声明。
 变量 还记得C语言是怎么定义变量的吗？我们的YC语言与你之前所学的没有什么不同，例如，你可以像下面这样定义YC语言中的变量。
@@ -102,19 +102,19 @@ YC1支持的表达式按优先级从高到低如下表所示:
     
     <item>
       <title>特性汇总</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/lang-std/cheatsheet/</link>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/lang-std/cheatsheet/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/cheatsheet/</guid>
       <description>特性汇总 这里以最简洁的形式汇总了YC语言各个版本支持的特性。</description>
     </item>
     
     <item>
       <title>新特性提案</title>
-      <link>https://yan-lang.github.io/ycc/docs/lab/lang-std/new-features/</link>
+      <link>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/docs/lab/lang-std/new-features/</guid>
+      <guid>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</guid>
       <description>新特性提案 此页面还在撰写中&amp;hellip;  这个页面包含了可能会添加进下一个版本中的语言新特性。
 新特性池  struct 字符串  开发周期 为了保证学生能够较好的完成实验，我们对添加进入YC语言的特性十分的谨慎。这也是为什么我们采用多个版本迭代的方式进行语言特性的选取与开发。
 一般来说，所有学生只被要求实现YC语言前几个版本的特性（现在是YC1），学有余力的同学可以选择继续实现后面的版本。随着版本不断的更新，以后实验可能转向由我们提供编译器的基础实现（YC1），然后由学生实现新特性（YC1～YCn） -&amp;gt; 待定。
