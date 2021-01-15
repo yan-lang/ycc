@@ -3,111 +3,111 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/note/lab1/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/note/lab1/</loc>
     <lastmod>2020-03-22T19:40:53+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/summary/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/summary/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/other/faq/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/other/faq/</loc>
     <lastmod>2020-03-27T17:30:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/lexical/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/lexical/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/other/reference/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/other/reference/</loc>
     <lastmod>2020-04-23T15:58:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/note/lab2/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/note/lab2/</loc>
     <lastmod>2020-03-22T19:40:53+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/grammar/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/grammar/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/announcements/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/announcements/</loc>
     <lastmod>2020-03-22T11:37:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/semantic/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/semantic/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/</loc>
     <lastmod>2020-03-22T11:37:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/note/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/note/</loc>
     <lastmod>2020-03-22T11:37:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/framework-tutorial/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/framework-tutorial/</loc>
     <lastmod>2020-03-22T11:37:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/cheatsheet/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/cheatsheet/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/other/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/other/</loc>
     <lastmod>2020-03-22T11:37:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/lab/lang-std/new-features/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/lab/lang-std/new-features/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/categories/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/categories/</loc>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/</loc>
-    <lastmod>2020-04-23T15:58:48+08:00</lastmod>
+    <loc>https://yan-lang.github.io/ycc/docs/</loc>
+    <lastmod>2021-01-15T19:24:27+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/framework-tutorial/java/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/framework-tutorial/java/</loc>
     <lastmod>2020-06-19T20:35:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/framework-tutorial/java/lexer/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/framework-tutorial/java/lexer/</loc>
     <lastmod>2020-03-20T23:56:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/framework-tutorial/java/parser/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/framework-tutorial/java/parser/</loc>
     <lastmod>2020-03-20T23:56:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yan-lang.github.io/ycc/tags/</loc>
+    <loc>https://yan-lang.github.io/ycc/docs/tags/</loc>
   </url>
   
 </urlset>

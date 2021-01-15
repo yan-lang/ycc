@@ -3,7 +3,7 @@
 title: YCC实验 - 2020
 description: YCC编译原理实验 - 2020年春
 theme: book
-baseURL: https://yan-lang.github.io/ycc/
+baseURL: https://yan-lang.github.io/ycc/docs
 
 # Book configuration
 disablePathToLower: true

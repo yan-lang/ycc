@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>其他 on YCC实验 - 2020</title>
-    <link>https://yan-lang.github.io/ycc/other/</link>
+    <link>https://yan-lang.github.io/ycc/docs/other/</link>
     <description>Recent content in 其他 on YCC实验 - 2020</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/other/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/docs/other/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常见问题</title>
-      <link>https://yan-lang.github.io/ycc/other/faq/</link>
+      <link>https://yan-lang.github.io/ycc/docs/other/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/other/faq/</guid>
+      <guid>https://yan-lang.github.io/ycc/docs/other/faq/</guid>
       <description>常见问题 不支持发行版本5</description>
     </item>
     
     <item>
       <title>参考资料</title>
-      <link>https://yan-lang.github.io/ycc/other/reference/</link>
+      <link>https://yan-lang.github.io/ycc/docs/other/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/other/reference/</guid>
+      <guid>https://yan-lang.github.io/ycc/docs/other/reference/</guid>
       <description>参考资料 这里是你可以参考的相似项目和相关资料，欢迎补充。
 课程实验  伯克利的CS164: Programming Languages and Compilers, Spring 2019 斯坦福的CS143: Compilers CMU的15-411 Compiler Design 清华的Decaf  开源编译器&amp;amp;解释器  wenyan: 文言文编程 Wren Pony SmallerC 8cc ShivyC: Python实现的C语言编译器。 xcc wgtcc: C++实现的C语言编译器, 代码写的不错。 Enkel: 基于Java, Antlr的语言，编译成Java字节码，有文字教程。 c4: C语言实现的C编译器，非常精简, 只有四个函数, 支持自举。 xc: 修改自C4, 提供中文教程。 finch: 自制的动态语言, 使用C++编写  电子书  Lox解释器及其配套电子书  源码: https://github.com/munificent/craftinginterpreters   Introduction to Compilers and Language Design  配套代码: https://github.com/dthain/compilerbook-examples   A small demonstration how to use ANTLR 4&amp;rsquo;s visitor feature.</description>
     </item>

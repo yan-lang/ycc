@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>实验 on YCC实验 - 2020</title>
-    <link>https://yan-lang.github.io/ycc/lab/</link>
+    <link>https://yan-lang.github.io/ycc/docs/lab/</link>
     <description>Recent content in 实验 on YCC实验 - 2020</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/lab/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yan-lang.github.io/ycc/docs/lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实验综述</title>
-      <link>https://yan-lang.github.io/ycc/lab/summary/</link>
+      <link>https://yan-lang.github.io/ycc/docs/lab/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yan-lang.github.io/ycc/lab/summary/</guid>
+      <guid>https://yan-lang.github.io/ycc/docs/lab/summary/</guid>
       <description>实验综述 在这个实验中，你将要使用Java语言，为C语言的一个子集（我们将其称为YC）编写一个简单的编译器。
 评分标准    实验名称 分数 迟交扣分     Lab1: 词法分析 25 5分/天   Lab2: 语法分析 25 5/天   Lab3: 语义分析 25 3/天   Lab4: 中间代码生成 25 3/天    提交方法 请将的你程序打包成jar包。
 请通过我们的自动评测网站提交你的实现。
