@@ -103,6 +103,16 @@ public class ParseTreeFormatter implements Formatter<YCTree.TranslationUnit>, YC
     }
 
     @Override
+    public void visit(YCTree.ForStmt that) {
+        print(that, () -> {
+            printField("decl", () -> that.decl.accept(this));
+            printField("cond", () -> that.cond.accept(this));
+            printField("action", () -> that.action.accept(this));
+            printField("body", () -> that.body.accept(this));
+        });
+    }
+
+    @Override
     public void visit(YCTree.WhileStmt that) {
         print(that, () -> {
             printField("cond", () -> that.cond.accept(this));

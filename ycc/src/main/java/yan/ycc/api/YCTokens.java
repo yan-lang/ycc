@@ -63,24 +63,26 @@ public interface YCTokens {
 
     int KW_RETURN = 27;
 
-    int LPAREN = 28;
+    int KW_FOR = 28;
 
-    int RPAREN = 29;
+    int LPAREN = 29;
 
-    int LBRACE = 30;
+    int RPAREN = 30;
 
-    int RBRACE = 31;
+    int LBRACE = 31;
 
-    int SEMICOLON = 32;
+    int RBRACE = 32;
 
-    int COMMA = 33;
+    int SEMICOLON = 33;
+
+    int COMMA = 34;
 
 
-    List<String> tokenNames = List.of("unknown", "identifier", "integer literal", "float literal", "add", "minus", "multiply", "divide", "remainder", "greater than", "greater than or equal", "less than", "less than or equal", "equal", "not equal", "assign", "logical or", "logical and", "logical not", "kw int", "kw float", "kw void", "kw if", "kw else", "kw while", "kw continue", "kw break", "kw return", "left parenthesis", "right parenthesis", "left brace", "right brace", "semicolon", "comma");
+    List<String> tokenNames = List.of("unknown", "identifier", "integer literal", "float literal", "add", "minus", "multiply", "divide", "remainder", "greater than", "greater than or equal", "less than", "less than or equal", "equal", "not equal", "assign", "logical or", "logical and", "logical not", "kw int", "kw float", "kw void", "kw if", "kw else", "kw while", "kw continue", "kw break", "kw return", "kw for", "left parenthesis", "right parenthesis", "left brace", "right brace", "semicolon", "comma");
 
-    List<String> tokenSymbolNames = List.of("unknown", "identifier", "integer literal", "float literal", "+", "-", "*", "/", "%", ">", ">=", "<", "<=", "==", "!=", "=", "||", "&&", "!", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "(", ")", "{", "}", ";", ",");
+    List<String> tokenSymbolNames = List.of("unknown", "identifier", "integer literal", "float literal", "+", "-", "*", "/", "%", ">", ">=", "<", "<=", "==", "!=", "=", "||", "&&", "!", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "for", "(", ")", "{", "}", ";", ",");
 
-    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 19), Map.entry("float", 20), Map.entry("void", 21), Map.entry("if", 22), Map.entry("else", 23), Map.entry("while", 24), Map.entry("continue", 25), Map.entry("break", 26), Map.entry("return", 27));
+    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 19), Map.entry("float", 20), Map.entry("void", 21), Map.entry("if", 22), Map.entry("else", 23), Map.entry("while", 24), Map.entry("continue", 25), Map.entry("break", 26), Map.entry("return", 27), Map.entry("for", 28));
 
 
 }

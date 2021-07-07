@@ -229,6 +229,38 @@ public abstract class YCTree extends Tree {
     }
 
     /**
+     * For循环
+     * <pre>
+     *     for(VarDecl; expression; expression) {
+     *         body
+     *     }
+     * </pre>
+     */
+    public static class ForStmt extends LoopStmt {
+        public Block body;
+        public VarDecl decl;
+        public Expr cond;
+        public Expr action;
+
+        public ForStmt(Block body, VarDecl decl, Expr cond, Expr action) {
+            this.body = body;
+            this.decl = decl;
+            this.cond = cond;
+            this.action = action;
+        }
+
+        @Override
+        public <R> R accept(Visitor<R> visitor) {
+            return visitor.visit(this);
+        }
+
+        @Override
+        public void accept(VoidVisitor visitor) {
+            visitor.visit(this);
+        }
+    }
+
+    /**
      * Return语句
      * <pre>
      *     'return' expression? ';'
@@ -630,6 +662,10 @@ public abstract class YCTree extends Tree {
             return setToken(new WhileStmt(cond, body));
         }
 
+        public ForStmt ForStmt(Block body, VarDecl decl, Expr cond, Expr action) {
+            return setToken(new ForStmt(body, decl, cond, action));
+        }
+
         public ReturnStmt ReturnStmt(Expr expr) {
             return setToken(new ReturnStmt(expr));
         }
@@ -707,6 +743,7 @@ public abstract class YCTree extends Tree {
         default void visit(PrimitiveType that)         { visitOthers(that); }
         default void visit(Id that)           { visitOthers(that); }
         default void visit(Literal that)      { visitOthers(that); }
+        default void visit(ForStmt that)  {  visitOthers(that); }
     }
 
     // @formatter:off
@@ -731,5 +768,6 @@ public abstract class YCTree extends Tree {
         default R visit(PrimitiveType that)         { return visitOthers(that); }
         default R visit(Id that)           { return visitOthers(that); }
         default R visit(Literal that)      { return visitOthers(that); }
+        default R visit(ForStmt that)  { return visitOthers(that); }
     }
 }

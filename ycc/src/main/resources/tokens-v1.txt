@@ -26,6 +26,7 @@ kw while,    symbol=while,    group=keyword
 kw continue, symbol=continue, group=keyword
 kw break,    symbol=break,    group=keyword
 kw return,   symbol=return,   group=keyword
+kw for,      symbol=for,      group=keyword
 lparen,      left parenthesis,  (
 rparen,      right parenthesis, )
 lbrace,      left brace,        {
