@@ -25,6 +25,11 @@ public abstract class AbstractCSFormatter implements Formatter<YCTree.Translatio
     }
 
     @Override
+    public void visit(YCTree.ForStmt that) {
+        that.body.accept(this);
+    }
+
+    @Override
     public void visit(YCTree.WhileStmt that) {
         that.body.accept(this);
     }
