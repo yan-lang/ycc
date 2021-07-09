@@ -14,6 +14,11 @@ lte,         less than or equal,    </=
 eq,          equal,           /=/=
 neq,         not equal,       !/=
 assign,      assign,          /=
+add_assign,  add assign,     +/=
+minus_assign,  minus assign,     -/=
+multi_assign,  multi assign,     */=
+div_assign,  div assign,     ///=
+rem_assign,  rem assign,     %/=
 lor,         logical or,   ||
 land,        logical and,  &&
 lnot,        logical not,  !

@@ -378,11 +378,11 @@ public abstract class YCTree extends Tree {
         // @formatter:off
         public static Tag getTagFromToken(Token token) {
             switch (token.type) {
-                case YCTokens.MULTI: return Tag.MULTI;
-                case YCTokens.DIV: return Tag.DIV;
-                case YCTokens.ADD: return Tag.ADD;
-                case YCTokens.MINUS: return Tag.MINUS;
-                case YCTokens.REM: return Tag.REM;
+                case YCTokens.MULTI: case YCTokens.MULTI_ASSIGN: return Tag.MULTI;
+                case YCTokens.DIV: case YCTokens.DIV_ASSIGN: return Tag.DIV;
+                case YCTokens.ADD: case YCTokens.ADD_ASSIGN: return Tag.ADD;
+                case YCTokens.MINUS: case YCTokens.MINUS_ASSIGN: return Tag.MINUS;
+                case YCTokens.REM: case YCTokens.REM_ASSIGN: return Tag.REM;
                 case YCTokens.GT: return Tag.GT;
                 case YCTokens.GTE: return Tag.GTE;
                 case YCTokens.LT: return Tag.LT;

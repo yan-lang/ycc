@@ -39,50 +39,59 @@ public interface YCTokens {
 
     int ASSIGN = 15;
 
-    int LOR = 16;
+    int ADD_ASSIGN = 16;
 
-    int LAND = 17;
+    int MINUS_ASSIGN = 17;
 
-    int LNOT = 18;
+    int MULTI_ASSIGN = 18;
 
-    int KW_INT = 19;
+    int DIV_ASSIGN = 19;
 
-    int KW_FLOAT = 20;
+    int REM_ASSIGN = 20;
 
-    int KW_VOID = 21;
+    int LOR = 21;
 
-    int KW_IF = 22;
+    int LAND = 22;
 
-    int KW_ELSE = 23;
+    int LNOT = 23;
 
-    int KW_WHILE = 24;
+    int KW_INT = 24;
 
-    int KW_CONTINUE = 25;
+    int KW_FLOAT = 25;
 
-    int KW_BREAK = 26;
+    int KW_VOID = 26;
 
-    int KW_RETURN = 27;
+    int KW_IF = 27;
 
-    int KW_FOR = 28;
+    int KW_ELSE = 28;
 
-    int LPAREN = 29;
+    int KW_WHILE = 29;
 
-    int RPAREN = 30;
+    int KW_CONTINUE = 30;
 
-    int LBRACE = 31;
+    int KW_BREAK = 31;
 
-    int RBRACE = 32;
+    int KW_RETURN = 32;
 
-    int SEMICOLON = 33;
+    int KW_FOR = 33;
 
-    int COMMA = 34;
+    int LPAREN = 34;
+
+    int RPAREN = 35;
+
+    int LBRACE = 36;
+
+    int RBRACE = 37;
+
+    int SEMICOLON = 38;
+
+    int COMMA = 39;
 
 
-    List<String> tokenNames = List.of("unknown", "identifier", "integer literal", "float literal", "add", "minus", "multiply", "divide", "remainder", "greater than", "greater than or equal", "less than", "less than or equal", "equal", "not equal", "assign", "logical or", "logical and", "logical not", "kw int", "kw float", "kw void", "kw if", "kw else", "kw while", "kw continue", "kw break", "kw return", "kw for", "left parenthesis", "right parenthesis", "left brace", "right brace", "semicolon", "comma");
+    List<String> tokenNames = List.of("unknown", "identifier", "integer literal", "float literal", "add", "minus", "multiply", "divide", "remainder", "greater than", "greater than or equal", "less than", "less than or equal", "equal", "not equal", "assign", "add assign", "minus assign", "multi assign", "div assign", "rem assign", "logical or", "logical and", "logical not", "kw int", "kw float", "kw void", "kw if", "kw else", "kw while", "kw continue", "kw break", "kw return", "kw for", "left parenthesis", "right parenthesis", "left brace", "right brace", "semicolon", "comma");
 
-    List<String> tokenSymbolNames = List.of("unknown", "identifier", "integer literal", "float literal", "+", "-", "*", "/", "%", ">", ">=", "<", "<=", "==", "!=", "=", "||", "&&", "!", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "for", "(", ")", "{", "}", ";", ",");
+    List<String> tokenSymbolNames = List.of("unknown", "identifier", "integer literal", "float literal", "+", "-", "*", "/", "%", ">", ">=", "<", "<=", "==", "!=", "=", "+=", "-=", "*=", "/=", "%=", "||", "&&", "!", "int", "float", "void", "if", "else", "while", "continue", "break", "return", "for", "(", ")", "{", "}", ";", ",");
 
-    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 19), Map.entry("float", 20), Map.entry("void", 21), Map.entry("if", 22), Map.entry("else", 23), Map.entry("while", 24), Map.entry("continue", 25), Map.entry("break", 26), Map.entry("return", 27), Map.entry("for", 28));
-
+    Map<String, Integer> keyword = Map.ofEntries(Map.entry("int", 24), Map.entry("float", 25), Map.entry("void", 26), Map.entry("if", 27), Map.entry("else", 28), Map.entry("while", 29), Map.entry("continue", 30), Map.entry("break", 31), Map.entry("return", 32), Map.entry("for", 33));
 
 }
