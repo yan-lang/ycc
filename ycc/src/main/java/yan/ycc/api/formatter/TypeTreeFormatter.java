@@ -111,6 +111,16 @@ public class TypeTreeFormatter implements Formatter<YCTree.TranslationUnit>, YCT
     }
 
     @Override
+    public void visit(YCTree.ForStmt that) {
+        print(that, () -> {
+            printField("cond", () -> that.cond.accept(this));
+            printField("action", () -> that.action.accept(this));
+            printField("decl", () -> that.decl.accept(this));
+            printField("body", () -> that.body.accept(this));
+        });
+    }
+
+    @Override
     public void visit(YCTree.ReturnStmt that) {
         print(that, () -> {
             that.value().ifPresent(v -> printField("value", () -> v.accept(this)));
